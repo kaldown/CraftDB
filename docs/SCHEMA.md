@@ -75,22 +75,88 @@ end
     reagents = {                  -- Array of Reagent objects
         { itemId = 2589, name = "Linen Cloth", count = 1 },
     },
-    source = {                    -- How to obtain recipe
-        type = "trainer",         -- See SOURCE_TYPE constants
-    },
+    source = { ... },             -- How to obtain recipe (see Source Object below)
     expansion = 1,                -- Which expansion added this
 
-    -- Optional fields
+    -- Optional fields (Phase 2)
     specialization = "...",       -- Required specialization
     requiredTool = 12345,         -- Item ID of required tool
-    requiredTotem = 12345,        -- Item ID of required totem
     cooldown = 86400,             -- Cooldown in seconds
-    questId = 12345,              -- Quest that teaches recipe
-    vendorId = 12345,             -- NPC that sells recipe
-    reputationRequired = {        -- Reputation requirement
-        faction = 123,
-        level = 6,                -- 6 = Honored, 7 = Revered, 8 = Exalted
+}
+```
+
+### Source Object
+
+The `source` field describes how to obtain a recipe. Structure varies by type:
+
+**Trainer Source:**
+```lua
+{
+    type = "trainer",
+    npcName = "Any Cooking Trainer",  -- Display name (optional for generic trainers)
+    npcId = 1234,                     -- Specific NPC ID (optional)
+    location = "Stormwind City",      -- Zone/area (optional)
+    faction = "Alliance",             -- "Alliance", "Horde", or nil for both
+    cost = 100,                       -- Training cost in copper (optional)
+    note = "Learned automatically",   -- Additional info (optional)
+}
+```
+
+**Vendor Source:**
+```lua
+{
+    type = "vendor",
+    itemId = 6325,                    -- Recipe item ID sold by vendor
+    cost = 3400,                      -- Cost in copper
+    vendors = {                       -- Array of vendor info
+        {
+            npcId = 5494,
+            npcName = "Catherine Leland",
+            location = "Stormwind City",
+            faction = "Alliance",
+        },
+        {
+            npcId = 3029,
+            npcName = "Sewa Mistrunner",
+            location = "Thunder Bluff",
+            faction = "Horde",
+        },
     },
+}
+```
+
+**Quest Source:**
+```lua
+{
+    type = "quest",
+    questId = 90,
+    questName = "Seasoned Wolf Kabobs",
+    location = "Darkshire",
+    faction = "Alliance",             -- nil for both factions
+}
+```
+
+**Drop Source:**
+```lua
+{
+    type = "drop",
+    npcId = 1234,                     -- Mob that drops it (nil for world drop)
+    npcName = "Mob Name",
+    location = "Zone",
+    dropRate = 5,                     -- Percentage (optional)
+}
+```
+
+**Reputation Source:**
+```lua
+{
+    type = "reputation",
+    factionId = 1234,
+    factionName = "Faction Name",
+    level = "Revered",                -- Friendly, Honored, Revered, Exalted
+    npcId = 5678,
+    npcName = "Quartermaster",
+    location = "Zone",
 }
 ```
 
@@ -168,4 +234,5 @@ See `docs/agents/CONTRIBUTING.md` for data contribution guidelines.
 
 ## Version History
 
+- **0.1.1** - Enhanced source data with NPC IDs, locations, and faction info (Issue #1)
 - **0.1.0** - Initial release with First Aid (TBC)
