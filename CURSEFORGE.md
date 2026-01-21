@@ -1,20 +1,3 @@
-# CurseForge Description
-
-Copy this when uploading new versions.
-
----
-
-## Short Description
-
-```
-Comprehensive crafting recipe database and API for addon developers. Contains recipe data, skill requirements, reagents, and source information.
-```
-
----
-
-## Main Description
-
-```markdown
 CraftDB is a standalone library addon providing a complete crafting recipe database for World of Warcraft addon developers.
 
 > **This is a developer library** - It has no UI on its own. Other addons (like [LazyProf](https://www.curseforge.com/wow/addons/lazyprof)) use CraftDB for recipe data.
@@ -44,14 +27,18 @@ CraftDB is a standalone library addon providing a complete crafting recipe datab
 
 Add CraftDB as a dependency in your `.toc` file:
 
+```
 ## Dependencies: CraftDB
+```
 
 ### API Example
 
+```lua
 local recipes = CraftDB:GetRecipes("Cooking")
 local available = CraftDB:GetAvailableRecipes("Cooking", 225)
 local recipe = CraftDB:GetRecipeBySpellId("Cooking", 33359)
 local difficulty = CraftDB:GetRecipeDifficulty(recipe, 300)
+```
 
 ### Available Functions
 
@@ -66,31 +53,3 @@ local difficulty = CraftDB:GetRecipeDifficulty(recipe, 300)
 ## Addons Using CraftDB
 
 - [LazyProf](https://www.curseforge.com/wow/addons/lazyprof) - Profession leveling optimizer
-```
-
----
-
-## Changelog Template
-
-```markdown
-## v0.X.X
-
-**New Data:**
-- Profession 1: X recipes added
-
-**Changes:**
-- Item 1
-
-**Fixes:**
-- Fix 1
-```
-
----
-
-## Upload Checklist
-
-1. Update version in `CraftDB.toc`
-2. Update changelog above
-3. Package: exclude `.git/`, `docs/`, `.idea/`
-4. Upload to CurseForge
-5. Tag release: `git tag v0.X.X && git push --tags`
