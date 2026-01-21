@@ -18,10 +18,10 @@ Comprehensive crafting recipe database and API for World of Warcraft addon devel
 | Cooking | Complete |
 | First Aid | Complete |
 | Mining | Complete (smelting) |
+| Engineering | Complete |
 | Alchemy | In Progress |
 | Blacksmithing | In Progress |
 | Enchanting | In Progress |
-| Engineering | In Progress |
 | Jewelcrafting | In Progress |
 | Leatherworking | In Progress |
 | Tailoring | In Progress |

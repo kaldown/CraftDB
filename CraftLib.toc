@@ -13,3 +13,4 @@ Core/Init.lua
 Data/TBC/FirstAid/Recipes.lua
 Data/TBC/Cooking/Recipes.lua
 Data/TBC/Mining/Recipes.lua
+Data/TBC/Engineering/Recipes.lua

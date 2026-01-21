@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `GetRecipeByProduct(itemId)` API - Reverse lookup to find all recipes that produce a given item
 - `yield` field in recipe schema - Number of items produced per craft (defaults to 1)
 - Mining profession (smelting recipes) - Vanilla and TBC ore-to-bar conversions
+- Engineering profession - Complete with ~100 recipes covering Vanilla and TBC, including Gnomish and Goblin specializations
 
 ### Fixed
 

@@ -16,10 +16,10 @@ CraftLib is a standalone library addon providing a complete crafting recipe data
 | Cooking | Complete |
 | First Aid | Complete |
 | Mining | Complete (smelting) |
+| Engineering | Complete |
 | Alchemy | In Progress |
 | Blacksmithing | In Progress |
 | Enchanting | In Progress |
-| Engineering | In Progress |
 | Jewelcrafting | In Progress |
 | Leatherworking | In Progress |
 | Tailoring | In Progress |
