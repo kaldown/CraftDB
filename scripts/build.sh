@@ -26,8 +26,7 @@ cp -r Core "$BUILD_DIR/${ADDON_NAME}/"
 cp -r Data "$BUILD_DIR/${ADDON_NAME}/"
 
 # Copy user-facing docs only
-mkdir -p "$BUILD_DIR/${ADDON_NAME}/docs"
-cp docs/SCHEMA.md "$BUILD_DIR/${ADDON_NAME}/docs/"
+cp SCHEMA.md "$BUILD_DIR/${ADDON_NAME}/"
 
 # Create zip
 cd "$BUILD_DIR"
