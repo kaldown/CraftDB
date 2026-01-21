@@ -1,8 +1,8 @@
 # CraftLib
 
-Comprehensive crafting recipe database and API for World of Warcraft addon developers.
+[![CurseForge](https://img.shields.io/badge/CurseForge-CraftLib-orange)](https://www.curseforge.com/wow/addons/craftlib)
 
-**Download:** [CurseForge](https://www.curseforge.com/wow/addons/craftlib)
+Comprehensive crafting recipe database and API for World of Warcraft addon developers.
 
 ## Features
 
