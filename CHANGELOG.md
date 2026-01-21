@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `GetRecipeByProduct(itemId)` API - Reverse lookup to find all recipes that produce a given item
+- `yield` field in recipe schema - Number of items produced per craft (defaults to 1)
+
 ### Fixed
 
 - First Aid source data now includes NPC names (vanilla: "Any First Aid Trainer", TBC: specific vendors with NPC IDs, locations, and faction info)

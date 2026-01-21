@@ -9,6 +9,7 @@ CraftLib.dataVersion = 1
 -- Internal storage
 CraftLib.professions = {}
 CraftLib.items = {}
+CraftLib.productIndex = {}  -- Reverse lookup: itemId -> recipes that produce it
 
 --------------------------------------------------------------------------------
 -- Profession Registration API
@@ -38,6 +39,14 @@ function CraftLib:RegisterProfession(professionKey, data)
     for _, recipe in ipairs(data.recipes or {}) do
         if recipe.itemId then
             self.items[recipe.itemId] = recipe
+
+            -- Build reverse lookup (itemId -> recipes that produce it)
+            self.productIndex[recipe.itemId] = self.productIndex[recipe.itemId] or {}
+            table.insert(self.productIndex[recipe.itemId], {
+                recipe = recipe,
+                professionKey = professionKey,
+                yield = recipe.yield or 1,
+            })
         end
     end
 end
@@ -105,6 +114,13 @@ end
 -- @return table|nil Recipe data or nil
 function CraftLib:GetRecipeByItemId(itemId)
     return self.items[itemId]
+end
+
+--- Get all recipes that produce a given item (reverse lookup)
+-- @param itemId number The item ID to look up
+-- @return table|nil Array of {recipe, professionKey, yield} or nil if not craftable
+function CraftLib:GetRecipeByProduct(itemId)
+    return self.productIndex[itemId]
 end
 
 --- Get difficulty color for a recipe at given skill level

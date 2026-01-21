@@ -48,6 +48,7 @@ local difficulty = CraftLib:GetRecipeDifficulty(recipe, 300)
 - `CraftLib:GetAvailableRecipes(key, skillLevel)` - Filter by skill level
 - `CraftLib:GetRecipeBySpellId(key, spellId)` - Lookup by spell ID
 - `CraftLib:GetRecipeByItemId(itemId)` - Lookup by crafted item ID
+- `CraftLib:GetRecipeByProduct(itemId)` - Find all recipes that produce an item
 - `CraftLib:GetRecipeDifficulty(recipe, skillLevel)` - Get difficulty color
 
 ## Addons Using CraftLib

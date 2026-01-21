@@ -27,6 +27,7 @@ end
 | `CraftLib:GetAvailableRecipes(key, level)` | table | Recipes available at skill level |
 | `CraftLib:GetRecipeBySpellId(key, id)` | table/nil | Find recipe by spell ID |
 | `CraftLib:GetRecipeByItemId(itemId)` | table/nil | Find recipe by crafted item ID |
+| `CraftLib:GetRecipeByProduct(itemId)` | table/nil | Find all recipes that produce an item |
 | `CraftLib:GetRecipeDifficulty(recipe, level)` | string | "orange"/"yellow"/"green"/"gray" |
 
 ### Profession Keys
@@ -78,7 +79,8 @@ end
     source = { ... },             -- How to obtain recipe (see Source Object below)
     expansion = 1,                -- Which expansion added this
 
-    -- Optional fields (Phase 2)
+    -- Optional fields
+    yield = 1,                    -- Items produced per craft (default: 1)
     specialization = "...",       -- Required specialization
     requiredTool = 12345,         -- Item ID of required tool
     cooldown = 86400,             -- Cooldown in seconds
@@ -225,6 +227,28 @@ local function FindOrangeRecipes(professionKey, skillLevel)
     end
 
     return orange
+end
+```
+
+## Example: Find Craftable Alternatives (Reverse Lookup)
+
+```lua
+-- Check if an item can be crafted instead of bought
+local function GetCraftableAlternatives(itemId)
+    local results = CraftLib:GetRecipeByProduct(itemId)
+    if not results then return nil end
+
+    -- results is an array of { recipe, professionKey, yield }
+    for _, entry in ipairs(results) do
+        print(string.format(
+            "%s can be crafted via %s (yields %d)",
+            entry.recipe.name,
+            entry.professionKey,
+            entry.yield
+        ))
+    end
+
+    return results
 end
 ```
 

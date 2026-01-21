@@ -50,6 +50,9 @@ if CraftLib:IsReady() then
     -- Look up by crafted item ID
     local recipe = CraftLib:GetRecipeByItemId(27667)
 
+    -- Find all recipes that produce an item (reverse lookup)
+    local producers = CraftLib:GetRecipeByProduct(27667)
+
     -- Get difficulty color (orange/yellow/green/gray)
     local difficulty = CraftLib:GetRecipeDifficulty(recipe, 300)
 end
@@ -66,6 +69,7 @@ end
 | `GetAvailableRecipes(key, skillLevel)` | Filter recipes by skill level |
 | `GetRecipeBySpellId(key, spellId)` | Look up recipe by spell ID |
 | `GetRecipeByItemId(itemId)` | Look up recipe by crafted item ID |
+| `GetRecipeByProduct(itemId)` | Find all recipes that produce an item |
 | `GetRecipeDifficulty(recipe, skillLevel)` | Get difficulty color |
 
 ## Recipe Data Structure
@@ -81,6 +85,7 @@ Each recipe contains:
 | `skillRange` | Difficulty thresholds `{orange, yellow, green, gray}` |
 | `reagents` | List of `{itemId, count}` pairs |
 | `source` | How to obtain (trainer, vendor, quest, drop, reputation) |
+| `yield` | Items produced per craft (optional, default: 1) |
 
 ## Addons Using CraftLib
 
