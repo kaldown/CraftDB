@@ -34,6 +34,57 @@ REP_LEVELS = {
 }
 
 
+def detect_source(recipe: dict, indexes: dict) -> dict:
+    """Detect recipe source (trainer/vendor/drop/reputation)."""
+    recipe_item_id = recipe.get("recipe_item")
+
+    # No recipe item = trainer
+    if not recipe_item_id:
+        return {"type": "TRAINER"}
+
+    # Get item details
+    item = indexes["item_details"].get(recipe_item_id, {})
+    buy_price = int(item.get("BuyPrice", "0"))
+    min_faction = int(item.get("MinFactionID", "0"))
+    min_rep = int(item.get("MinReputation", "0"))
+    bonding = item.get("Bonding", "0")
+
+    # Reputation vendor
+    if min_faction > 0:
+        faction_name = indexes["faction_names"].get(str(min_faction), f"Faction-{min_faction}")
+        rep_level = REP_LEVELS.get(min_rep, f"Rep-{min_rep}")
+        return {
+            "type": "REPUTATION",
+            "factionId": min_faction,
+            "factionName": faction_name,
+            "level": rep_level,
+            "itemId": int(recipe_item_id),
+            "cost": buy_price,
+        }
+
+    # Vendor (high buy price)
+    if buy_price >= 5000:  # >= 50 silver
+        return {
+            "type": "VENDOR",
+            "itemId": int(recipe_item_id),
+            "cost": buy_price,
+        }
+
+    # Drop (low buy price, unbound)
+    if bonding == "0":
+        return {
+            "type": "DROP",
+            "itemId": int(recipe_item_id),
+        }
+
+    # Fallback: vendor
+    return {
+        "type": "VENDOR",
+        "itemId": int(recipe_item_id),
+        "cost": buy_price,
+    }
+
+
 def load_csv(path: Path) -> list[dict]:
     """Load CSV file as list of dicts."""
     with open(path, "r", encoding="utf-8") as f:
@@ -187,6 +238,9 @@ def extract_recipes(data: dict, indexes: dict, skill_line_id: int) -> list[dict]
             "expansion": expansion,
             "recipe_item": indexes["recipe_items"].get(spell_id),
         }
+
+        # Detect source
+        recipe["source"] = detect_source(recipe, indexes)
 
         recipes.append(recipe)
 
