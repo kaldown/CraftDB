@@ -131,6 +131,71 @@ def build_indexes(data: dict) -> dict:
     return indexes
 
 
+def extract_recipes(data: dict, indexes: dict, skill_line_id: int) -> list[dict]:
+    """Extract recipes for a profession from SkillLineAbility."""
+    recipes = []
+
+    for row in data["SkillLineAbility"]:
+        if row.get("SkillLine") != str(skill_line_id):
+            continue
+
+        spell_id = row.get("Spell")
+        if not spell_id:
+            continue
+
+        # Get crafted item
+        item_id = indexes["crafted_items"].get(spell_id)
+        if not item_id:
+            continue  # Not a crafting recipe
+
+        # Build recipe object
+        min_skill = int(row.get("MinSkillLineRank", "0"))
+        trivial_low = int(row.get("TrivialSkillLineRankLow", "0"))
+        trivial_high = int(row.get("TrivialSkillLineRankHigh", "0"))
+
+        # Calculate skill range
+        orange = min_skill if min_skill > 0 else 1
+        yellow = trivial_low if trivial_low > 0 else orange
+        gray = trivial_high if trivial_high > 0 else yellow + 20
+        green = (yellow + gray) // 2
+
+        # Get reagents
+        reagents = []
+        for reagent_id, count in indexes["spell_reagents"].get(spell_id, []):
+            reagents.append({
+                "itemId": int(reagent_id),
+                "name": indexes["item_names"].get(reagent_id, f"Unknown-{reagent_id}"),
+                "count": count,
+            })
+
+        # Determine expansion
+        expansion = "TBC" if min_skill >= 300 else "VANILLA"
+
+        recipe = {
+            "id": int(spell_id),
+            "name": indexes["spell_names"].get(spell_id, f"Unknown-{spell_id}"),
+            "itemId": int(item_id),
+            "itemName": indexes["item_names"].get(item_id, f"Unknown-{item_id}"),
+            "skillRequired": min_skill,
+            "skillRange": {
+                "orange": orange,
+                "yellow": yellow,
+                "green": green,
+                "gray": gray,
+            },
+            "reagents": reagents,
+            "expansion": expansion,
+            "recipe_item": indexes["recipe_items"].get(spell_id),
+        }
+
+        recipes.append(recipe)
+
+    # Sort by skill required
+    recipes.sort(key=lambda r: (r["skillRequired"], r["id"]))
+
+    return recipes
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Generate CraftLib recipes from DB2")
     parser.add_argument("--version", required=True, help="Build version (e.g., 2.5.5.65463)")
@@ -156,6 +221,13 @@ def main() -> int:
     print(f"Built indexes: {len(indexes['spell_names'])} spells, "
           f"{len(indexes['item_names'])} items, "
           f"{len(indexes['recipe_items'])} recipe items", file=sys.stderr)
+
+    # Test: extract Engineering recipes
+    eng_recipes = extract_recipes(data, indexes, 202)
+    print(f"\nExtracted {len(eng_recipes)} Engineering recipes", file=sys.stderr)
+    if eng_recipes:
+        r = eng_recipes[0]
+        print(f"  First: {r['name']} (skill {r['skillRequired']})", file=sys.stderr)
 
     print(f"\nData loaded successfully.", file=sys.stderr)
     return 0
