@@ -1,0 +1,3 @@
+[submodule "vendor/db2-parser"]
+	path = vendor/db2-parser
+	url = git@github.com:kaldown/db2-parser.git
