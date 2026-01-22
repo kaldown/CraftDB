@@ -17,15 +17,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `yield` field in recipe schema - Number of items produced per craft (defaults to 1)
 - Mining profession (smelting recipes) - Vanilla and TBC ore-to-bar conversions
 - Engineering profession - Complete with ~100 recipes covering Vanilla and TBC, including Gnomish and Goblin specializations
+- `scripts/validate_sources.py` - Validation script to detect suspicious recipe sources (e.g., high-skill recipes incorrectly marked as TRAINER)
 
 ### Changed
 
 - Recipe data now generated from DB2 instead of manual curation
 - Replaced `extract_recipes.py` with `generate_recipes.py`
+- `skillRequired` now derived from yellow point when DB2 `MinSkillLineRank` is unreliable (fixes recipes showing as learnable at skill 1)
 
 ### Fixed
 
 - First Aid source data now includes NPC names (vanilla: "Any First Aid Trainer", TBC: specific vendors with NPC IDs, locations, and faction info)
+- First Aid recipe sources corrected: Heavy Silk Bandage, Mageweave Bandage, Netherweave Bandage, Heavy Netherweave Bandage now correctly marked as VENDOR; Powerful Anti-Venom marked as REPUTATION (Argent Dawn)
+- First Aid trainer names updated for 240+ recipes (Doctor Gustaf VanHowzen / Doctor Gregory Victor)
 
 ## [0.1.0] - 2026-01-21
 

@@ -76,9 +76,12 @@ git status && git log --oneline -1
 2. **Add to TOC**: Update `CraftLib.toc` with new file path
 3. **Research data**: Use Wowhead, Warcraft Wiki, in-game verification
 4. **Implement**: Follow template in [COMPONENTS.md](../architecture/COMPONENTS.md)
-5. **Test**: See [TESTING.md](TESTING.md)
-6. **Document**: Update README profession coverage table
-7. **Commit**: Follow documentation workflow above
+5. **Validate sources**: Run `python scripts/validate_sources.py --profession [name]`
+6. **Test**: See [TESTING.md](TESTING.md)
+7. **Document**: Update README profession coverage table
+8. **Commit**: Follow documentation workflow above
+
+See [ADDING_PROFESSIONS.md](ADDING_PROFESSIONS.md) for detailed steps.
 
 ## Release Process
 

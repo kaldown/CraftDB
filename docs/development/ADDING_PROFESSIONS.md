@@ -155,7 +155,37 @@ source = {
 },
 ```
 
-## Step 6: Test
+## Step 6: Validate Recipe Sources
+
+After adding recipes, run the validation script to detect suspicious source types:
+
+```bash
+# Validate specific profession
+python scripts/validate_sources.py --profession professionKey
+
+# Validate all professions
+python scripts/validate_sources.py
+
+# Cross-reference with Wowhead (slow, makes HTTP requests)
+python scripts/validate_sources.py --profession professionKey --check-wowhead
+```
+
+The script flags:
+- **High-skill TRAINER recipes** - Most recipes above a certain skill level are from vendors/drops, not trainers
+- **Known vendor recipe IDs** - Recipes confirmed to be from vendors
+
+When it finds suspicious recipes, verify on Wowhead:
+```
+https://www.wowhead.com/tbc/spell=SPELL_ID
+```
+
+Look for "Taught by" section:
+- "Manual: X" or "Pattern: X" → VENDOR
+- "Trainer Name" → TRAINER
+- "Dropped by X" → DROP
+- Requires reputation → REPUTATION
+
+## Step 7: Test In-Game
 
 ```lua
 /reload
@@ -170,13 +200,13 @@ source = {
 /dump CraftLib:GetRecipeBySpellId("professionKey", SPELL_ID)
 ```
 
-## Step 7: Update Documentation
+## Step 8: Update Documentation
 
 1. **README.md**: Update profession coverage table
 2. **CURSEFORGE.md**: Sync with README
 3. **CHANGELOG.md**: Add entry under `[Unreleased]`
 
-## Step 8: Commit
+## Step 9: Commit
 
 ```bash
 git add Data/TBC/[Profession]/ CraftLib.toc README.md CURSEFORGE.md CHANGELOG.md
@@ -190,3 +220,5 @@ git commit -m "feat(data): add [Profession] recipes for TBC"
 - Missing reagents in list
 - Incorrect skill ranges (always verify)
 - Not using constants for source types
+- **Marking vendor recipes as TRAINER** - Always run `validate_sources.py` after adding recipes
+- Not specifying vendor locations for VENDOR sources
