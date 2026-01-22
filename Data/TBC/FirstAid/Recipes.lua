@@ -128,8 +128,13 @@ local recipes = {
             { itemId = 4306, name = "Silk Cloth", count = 2 },
         },
         source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any First Aid Trainer",
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 16112, -- Manual: Heavy Silk Bandage
+            vendors = {
+                { npcId = 2805, npcName = "Deneb Walker", location = "Arathi Highlands (Stromgarde Keep)", faction = "Alliance" },
+                { npcId = 13476, npcName = "Balai Lok'Wein", location = "Dustwallow Marsh (Brackenwall Village)", faction = "Horde" },
+            },
+            cost = 2200, -- 22s
         },
         expansion = C.EXPANSION.VANILLA,
     },
