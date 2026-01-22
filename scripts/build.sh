@@ -24,6 +24,7 @@ mkdir -p "$BUILD_DIR/${ADDON_NAME}"
 cp -r CraftLib.toc "$BUILD_DIR/${ADDON_NAME}/"
 cp -r Core "$BUILD_DIR/${ADDON_NAME}/"
 cp -r Data "$BUILD_DIR/${ADDON_NAME}/"
+cp icon.tga "$BUILD_DIR/${ADDON_NAME}/"
 
 # Copy user-facing docs only
 cp SCHEMA.md "$BUILD_DIR/${ADDON_NAME}/"
