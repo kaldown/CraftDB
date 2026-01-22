@@ -374,14 +374,40 @@ def main() -> int:
           f"{len(indexes['item_names'])} items, "
           f"{len(indexes['recipe_items'])} recipe items", file=sys.stderr)
 
-    # Test: extract Engineering recipes
-    eng_recipes = extract_recipes(data, indexes, 202)
-    print(f"\nExtracted {len(eng_recipes)} Engineering recipes", file=sys.stderr)
-    if eng_recipes:
-        r = eng_recipes[0]
-        print(f"  First: {r['name']} (skill {r['skillRequired']})", file=sys.stderr)
+    # Expansion name for output path
+    exp_name = {1: "Classic", 2: "TBC", 3: "WotLK", 4: "Cata"}.get(args.expansion, "TBC")
 
-    print(f"\nData loaded successfully.", file=sys.stderr)
+    # Filter professions if specified
+    professions_to_generate = PROFESSIONS.items()
+    if args.profession:
+        prof_key = args.profession.lower()
+        professions_to_generate = [
+            (sid, p) for sid, p in PROFESSIONS.items()
+            if p["key"].lower() == prof_key or p["name"].lower() == prof_key
+        ]
+        if not professions_to_generate:
+            print(f"Unknown profession: {args.profession}", file=sys.stderr)
+            return 1
+
+    # Generate for each profession
+    for skill_line_id, profession in professions_to_generate:
+        recipes = extract_recipes(data, indexes, skill_line_id)
+
+        if not recipes:
+            print(f"No recipes found for {profession['name']}", file=sys.stderr)
+            continue
+
+        # Generate Lua
+        lua_code = generate_lua(recipes, profession, args.expansion)
+
+        # Write output
+        output_dir = args.output_dir / exp_name / profession["name"].replace(" ", "")
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_file = output_dir / "Recipes.lua"
+
+        output_file.write_text(lua_code)
+        print(f"Generated {output_file}: {len(recipes)} recipes", file=sys.stderr)
+
     return 0
 
 
