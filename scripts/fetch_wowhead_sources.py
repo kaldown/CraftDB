@@ -47,9 +47,9 @@ def fetch_wowhead_item(item_id: int, expansion: str = "tbc") -> dict | None:
             url,
             headers={"User-Agent": "CraftLib/1.0 (recipe source verification)"},
         )
-        with urllib.request.urlopen(req, timeout=10) as response:
+        with urllib.request.urlopen(req, timeout=30) as response:
             content = response.read().decode("utf-8")
-    except urllib.error.URLError as e:
+    except (urllib.error.URLError, TimeoutError, OSError) as e:
         print(f"  Error fetching {url}: {e}", file=sys.stderr)
         return None
 
@@ -176,6 +176,12 @@ def process_pending_sources(sources_file: Path, dry_run: bool, specific_items: l
         data["recipes"][spell_id]["source"] = new_source
         print(f"OK -> {source_type}", file=sys.stderr)
         updated += 1
+
+        # Save progress every 10 items
+        if updated % 10 == 0:
+            with open(sources_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2)
+            print(f"  [Saved progress: {updated} verified]", file=sys.stderr)
 
         # Rate limit
         time.sleep(0.5)
