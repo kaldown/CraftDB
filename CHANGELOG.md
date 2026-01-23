@@ -18,12 +18,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mining profession (smelting recipes) - Vanilla and TBC ore-to-bar conversions
 - Engineering profession - Complete with ~100 recipes covering Vanilla and TBC, including Gnomish and Goblin specializations
 - `scripts/validate_sources.py` - Validation script to detect suspicious recipe sources (e.g., high-skill recipes incorrectly marked as TRAINER)
+- `scripts/extract_db2_sources.py` - Extract certain sources (TRAINER, REPUTATION, QUEST) from DB2
+- `scripts/fetch_wowhead_sources.py` - Verify uncertain sources (VENDOR vs DROP) via Wowhead
+- `Data/Sources/` - Verified source data files with certainty tracking
+- Makefile targets: `extract-sources`, `verify-sources`, `update-profession`
 
 ### Changed
 
 - Recipe data now generated from DB2 instead of manual curation
 - Replaced `extract_recipes.py` with `generate_recipes.py`
 - `skillRequired` now derived from yellow point when DB2 `MinSkillLineRank` is unreliable (fixes recipes showing as learnable at skill 1)
+- Recipe source detection now uses verified data instead of heuristics
+- First Aid sources verified against Wowhead with certainty tracking
 
 ### Fixed
 
