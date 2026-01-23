@@ -72,10 +72,10 @@ git status && git log --oneline -1
 
 ## Adding a New Profession
 
-1. **Create data file**: `Data/TBC/[Profession]/Recipes.lua`
-2. **Add to TOC**: Update `CraftLib.toc` with new file path
-3. **Research data**: Use Wowhead, Warcraft Wiki, in-game verification
-4. **Implement**: Follow template in [COMPONENTS.md](../architecture/COMPONENTS.md)
+1. **Extract DB2 sources**: `python scripts/extract_db2_sources.py --version X.X.X.XXXXX --profession [name]`
+2. **Verify uncertain sources**: `python scripts/fetch_wowhead_sources.py --profession [name]`
+3. **Generate Recipes.lua**: `python scripts/generate_recipes.py --version X.X.X.XXXXX --profession [name]`
+4. **Add to TOC**: Update `CraftLib.toc` with new file path
 5. **Validate sources**: Run `python scripts/validate_sources.py --profession [name]`
 6. **Test**: See [TESTING.md](TESTING.md)
 7. **Document**: Update README profession coverage table

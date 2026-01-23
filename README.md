@@ -90,22 +90,37 @@ Each recipe contains:
 
 ## Data Generation
 
-CraftLib recipe data is generated from Blizzard's DB2 tables via [wago.tools](https://wago.tools/db2).
+CraftLib recipe data uses a three-phase pipeline for verified source accuracy:
 
-### Update Recipe Data
+### Phase 1: Extract from DB2
 
 ```bash
-# Fetch latest DB2 data and generate recipes
-make update-data EXPANSION=2
-
-# Or step by step:
-make fetch-data EXPANSION=2
-make generate VERSION=2.5.5.65463
+# Extract certain sources (TRAINER, REPUTATION, QUEST) from DB2
+python scripts/extract_db2_sources.py --version 2.5.5.65463 --profession FirstAid
 ```
 
-### Data Source
+### Phase 2: Verify Uncertain Sources
+
+```bash
+# Fetch VENDOR vs DROP classification from Wowhead
+python scripts/fetch_wowhead_sources.py --profession FirstAid
+
+# Review and commit verified sources
+git add Data/Sources/FirstAid.json
+git commit -m "feat(data): verify FirstAid sources"
+```
+
+### Phase 3: Generate Recipes.lua
+
+```bash
+# Generate Lua from verified sources (fails if any PENDING)
+python scripts/generate_recipes.py --version 2.5.5.65463 --profession FirstAid
+```
+
+### Data Sources
 
 - **DB2 Tables:** Spell, SpellName, SpellEffect, SpellReagents, Item, ItemSparse, SkillLine, SkillLineAbility, ItemEffect, Faction
+- **Wowhead:** VENDOR vs DROP verification for recipe items
 - **Fetcher:** [db2-parser](vendor/db2-parser) submodule
 
 ## Addons Using CraftLib
