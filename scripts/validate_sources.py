@@ -38,7 +38,7 @@ SUSPICIOUS_SKILL_THRESHOLD = {
     "jewelcrafting": 300,  # JC is TBC, so higher threshold
     "leatherworking": 200,
     "tailoring": 200,
-    "mining": 200,
+    "mining": 400,  # Mining trainers teach ALL smelting recipes (no vendor/drop recipes)
 }
 
 
