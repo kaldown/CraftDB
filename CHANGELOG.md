@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4] - 2026-01-24
+
 ### Fixed
 
 - All 10 professions now have Wowhead-verified difficulty values (93-100% coverage)
