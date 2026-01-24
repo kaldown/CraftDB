@@ -4,6 +4,8 @@
 
 This guide walks through adding recipe data for a new profession to CraftLib using the verified sources pipeline.
 
+> **Before you start:** Read `.claude/CLAUDE.md` → "Lessons Learned" section for known issues with removed recipes, Wowhead URL patterns, and rate limiting.
+
 ## Data Pipeline
 
 ```
@@ -52,8 +54,8 @@ python scripts/fetch_wowhead_sources.py --profession [Profession]
 # Preview
 python scripts/fetch_wowhead_sources.py --profession [Profession] --difficulty --dry-run
 
-# Fetch all difficulty levels
-python scripts/fetch_wowhead_sources.py --profession [Profession] --difficulty
+# Fetch all difficulty levels (use correct expansion!)
+python scripts/fetch_wowhead_sources.py --profession [Profession] --difficulty --expansion tbc
 ```
 
 This adds verified difficulty to each recipe:
@@ -74,6 +76,30 @@ The orange value (skill required to learn) cannot be reliably calculated - some 
 have non-uniform gaps between difficulty colors.
 
 See `vendor/db2-parser/schema/SkillLineAbility.md` for technical details.
+
+## Step 3.5: Review Failed Recipes & Update Lessons Learned
+
+**CRITICAL:** After EVERY Wowhead fetch session, do the following:
+
+1. **Check for failed recipes** - Some recipes fail because they were removed/never implemented
+2. **Research failures** - Check Wowhead comments to determine if recipe is removed vs rate limited
+3. **Update `.claude/CLAUDE.md`** - Add any newly discovered removed recipes to the "Lessons Learned" table
+4. **Consider filtering** - Removed recipes should not be in final Recipes.lua
+
+```bash
+# Check which recipes are missing difficulty
+python3 -c "
+import json
+d = json.load(open('Data/Sources/[Profession].json'))
+for sid, r in d['recipes'].items():
+    if r.get('difficulty', {}).get('certainty') != 'WOWHEAD':
+        print(f\"{sid}: {r['name']}\")"
+```
+
+**Reference:** See `.claude/CLAUDE.md` → "Lessons Learned: Per-Expansion Data Issues" for:
+- Known removed recipes per expansion
+- Wowhead URL patterns per expansion
+- Rate limiting patterns and workarounds
 
 ## Step 4: Commit Verified Sources
 
@@ -149,3 +175,6 @@ git commit -m "feat(data): add [Profession] recipes for TBC"
 - Not specifying vendor locations for VENDOR sources
 - **Skipping difficulty fetch** - DB2 does not have orange values; calculated values are inaccurate for some recipes
 - **Relying on calculated difficulty** - Always fetch from Wowhead for accurate data
+- **Using wrong Wowhead expansion URL** - Use `--expansion tbc` for TBC recipes, `--expansion classic` for vanilla
+- **Including removed recipes** - DB2 contains beta/removed recipes; check Wowhead comments for "removed" or "never implemented"
+- **Not updating Lessons Learned** - After every Wowhead session, update `.claude/CLAUDE.md` with new findings

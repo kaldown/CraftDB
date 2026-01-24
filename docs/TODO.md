@@ -18,17 +18,28 @@
 
 ### Remaining Steps
 
-Wowhead rate limits requests (403 Forbidden after ~20 requests). Need to wait and retry:
+Wowhead rate limits requests (403 Forbidden after ~100 requests). Need to wait and retry:
 
 ```bash
 cd /Users/kaldown/Projects/WoW/addons/LazyProf/Libs/CraftLib
 
 # Wait a few hours, then fetch each profession with delays
-python scripts/fetch_wowhead_sources.py --profession [Profession] --difficulty
+python scripts/fetch_wowhead_sources.py --profession [Profession] --difficulty --expansion tbc
 
 # After all are fetched, regenerate
 python scripts/generate_recipes.py --version 2.5.5.65463 --expansion 2
 ```
+
+### Post-Fetch Checklist
+
+**AFTER EVERY FETCH SESSION:**
+- [ ] Review failed recipes - are they rate limited or removed?
+- [ ] Update `.claude/CLAUDE.md` → "Lessons Learned" with any new removed recipes found
+- [ ] Update progress percentages in this file
+
+### Known Removed Recipes
+
+See `.claude/CLAUDE.md` → "Lessons Learned: Per-Expansion Data Issues" for full list of recipes that exist in DB2 but were removed/never implemented in live TBC.
 
 ### Background
 
