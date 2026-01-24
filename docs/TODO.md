@@ -12,9 +12,9 @@
 - ✅ Engineering - 240/250 (96%) - 10 removed recipes
 - ✅ Enchanting - 30/31 (96%) - 1 removed recipe (Arcane Dust)
 - ✅ Tailoring - 314/329 (95%) - 15 removed recipes
-- ✅ Leatherworking - 360/379 (94%) - some removed recipes
+- ✅ Leatherworking - 377/379 (99%) - 2 removed recipes
 - ✅ First Aid - 15/16 (93%) - 1 removed recipe
-- ❌ **Blacksmithing - 0/385 - REMAINING**
+- ◐ **Blacksmithing - 155/385 (40%) - IN PROGRESS**
 
 ### Remaining Steps
 
