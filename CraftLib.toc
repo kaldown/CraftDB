@@ -5,6 +5,8 @@
 ## Version: 0.2.2
 ## IconTexture: Interface\AddOns\CraftLib\icon
 ## SavedVariables: CraftLibDB
+## X-Curse-Project-ID: 1438834
+## X-Wago-ID: rNkyyOKa
 
 # Core
 Core/Constants.lua

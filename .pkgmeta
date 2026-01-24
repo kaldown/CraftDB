@@ -1,0 +1,18 @@
+package-as: CraftLib
+
+ignore:
+  - .git
+  - .github
+  - .claude
+  - docs
+  - scripts
+  - vendor
+  - Makefile
+  - README.md
+  - CONTRIBUTING.md
+  - CURSEFORGE.md
+  - CHANGELOG.md
+  - SCHEMA.md
+  - "*.md"
+
+enable-nolib-creation: no
