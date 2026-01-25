@@ -5,71 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Delicate Copper Wire (0)
-    {
-        id = 25255,
-        name = "Delicate Copper Wire",
-        itemId = 20816,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 20, green = 35, gray = 50 },
-        reagents = {
-            { itemId = 2840, name = "Copper Bar", count = 2 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Jewelcrafting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Braided Copper Ring (0)
-    {
-        id = 25493,
-        name = "Braided Copper Ring",
-        itemId = 20906,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
-        reagents = {
-            { itemId = 20816, name = "Delicate Copper Wire", count = 2 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Jewelcrafting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Woven Copper Ring (0)
-    {
-        id = 26925,
-        name = "Woven Copper Ring",
-        itemId = 21931,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
-        reagents = {
-            { itemId = 20816, name = "Delicate Copper Wire", count = 2 },
-            { itemId = 2840, name = "Copper Bar", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Jewelcrafting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Rough Stone Statue (0)
-    {
-        id = 32259,
-        name = "Rough Stone Statue",
-        itemId = 25498,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 30, green = 40, gray = 50 },
-        reagents = {
-            { itemId = 2835, name = "Rough Stone", count = 8 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Jewelcrafting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Heavy Copper Ring (5)
     {
         id = 26926,
@@ -80,6 +15,22 @@ local recipes = {
         reagents = {
             { itemId = 2840, name = "Copper Bar", count = 4 },
             { itemId = 20816, name = "Delicate Copper Wire", count = 2 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Jewelcrafting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Delicate Copper Wire (20)
+    {
+        id = 25255,
+        name = "Delicate Copper Wire",
+        itemId = 20816,
+        skillRequired = 20,
+        skillRange = { orange = 0, yellow = 20, green = 35, gray = 50 },
+        reagents = {
+            { itemId = 2840, name = "Copper Bar", count = 2 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
@@ -138,6 +89,39 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Braided Copper Ring (30)
+    {
+        id = 25493,
+        name = "Braided Copper Ring",
+        itemId = 20906,
+        skillRequired = 30,
+        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
+        reagents = {
+            { itemId = 20816, name = "Delicate Copper Wire", count = 2 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Jewelcrafting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Woven Copper Ring (30)
+    {
+        id = 26925,
+        name = "Woven Copper Ring",
+        itemId = 21931,
+        skillRequired = 30,
+        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
+        reagents = {
+            { itemId = 20816, name = "Delicate Copper Wire", count = 2 },
+            { itemId = 2840, name = "Copper Bar", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Jewelcrafting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Ornate Tigerseye Necklace (30)
     {
         id = 26928,
@@ -149,6 +133,22 @@ local recipes = {
             { itemId = 818, name = "Tigerseye", count = 2 },
             { itemId = 2840, name = "Copper Bar", count = 2 },
             { itemId = 20816, name = "Delicate Copper Wire", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Jewelcrafting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Rough Stone Statue (30)
+    {
+        id = 32259,
+        name = "Rough Stone Statue",
+        itemId = 25498,
+        skillRequired = 30,
+        skillRange = { orange = 0, yellow = 30, green = 40, gray = 50 },
+        reagents = {
+            { itemId = 2835, name = "Rough Stone", count = 8 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,

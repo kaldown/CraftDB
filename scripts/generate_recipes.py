@@ -293,7 +293,18 @@ def extract_recipes(
             # Orange = 2 * yellow - gray (assumes equal gaps, but not always true)
             orange = max(1, 2 * yellow - gray)
 
-        skill_required = orange
+        # For specialty recipes where orange=0 (always orange until yellow),
+        # use the first non-zero threshold as the minimum skill requirement.
+        # This prevents pathfinder from suggesting high-level items at low skill.
+        # Priority: orange > yellow > green > gray (first non-zero wins)
+        if orange > 0:
+            skill_required = orange
+        elif yellow > 0:
+            skill_required = yellow
+        elif green > 0:
+            skill_required = green
+        else:
+            skill_required = gray
 
         # Get reagents
         reagents = []

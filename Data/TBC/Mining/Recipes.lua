@@ -5,50 +5,15 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Smelt Copper (0)
+    -- Smelt Copper (25)
     {
         id = 2657,
         name = "Smelt Copper",
         itemId = 2840,
-        skillRequired = 0,
+        skillRequired = 25,
         skillRange = { orange = 0, yellow = 25, green = 47, gray = 70 },
         reagents = {
             { itemId = 2770, name = "Copper Ore", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Mining Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Smelt Dark Iron (0)
-    {
-        id = 14891,
-        name = "Smelt Dark Iron",
-        itemId = 11371,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 300, green = 305, gray = 310 },
-        reagents = {
-            { itemId = 11370, name = "Dark Iron Ore", count = 8 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Mining Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Smelt Elementium (0)
-    {
-        id = 22967,
-        name = "Smelt Elementium",
-        itemId = 17771,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 350, green = 362, gray = 375 },
-        reagents = {
-            { itemId = 18562, name = "Elementium Ore", count = 1 },
-            { itemId = 12360, name = "Arcanite Bar", count = 10 },
-            { itemId = 17010, name = "Fiery Core", count = 1 },
-            { itemId = 18567, name = "Elemental Flux", count = 3 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
@@ -202,6 +167,22 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Smelt Dark Iron (300)
+    {
+        id = 14891,
+        name = "Smelt Dark Iron",
+        itemId = 11371,
+        skillRequired = 300,
+        skillRange = { orange = 0, yellow = 300, green = 305, gray = 310 },
+        reagents = {
+            { itemId = 11370, name = "Dark Iron Ore", count = 8 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Mining Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Smelt Fel Iron (300)
     {
         id = 29356,
@@ -259,6 +240,25 @@ local recipes = {
         skillRange = { orange = 325, yellow = 325, green = 332, gray = 340 },
         reagents = {
             { itemId = 23425, name = "Adamantite Ore", count = 2 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Mining Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Smelt Elementium (350)
+    {
+        id = 22967,
+        name = "Smelt Elementium",
+        itemId = 17771,
+        skillRequired = 350,
+        skillRange = { orange = 0, yellow = 350, green = 362, gray = 375 },
+        reagents = {
+            { itemId = 18562, name = "Elementium Ore", count = 1 },
+            { itemId = 12360, name = "Arcanite Bar", count = 10 },
+            { itemId = 17010, name = "Fiery Core", count = 1 },
+            { itemId = 18567, name = "Elemental Flux", count = 3 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,

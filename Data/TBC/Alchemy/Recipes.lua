@@ -5,325 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Gurubashi Mojo Madness (0)
-    {
-        id = 24266,
-        name = "Gurubashi Mojo Madness",
-        itemId = 19931,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 315, green = 322, gray = 330 },
-        reagents = {
-            { itemId = 12938, name = "Blood of Heroes", count = 1 },
-            { itemId = 19943, name = "Massive Mojo", count = 1 },
-            { itemId = 12804, name = "Powerful Mojo", count = 6 },
-            { itemId = 13468, name = "Black Lotus", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Shadow to Water (0)
-    {
-        id = 28580,
-        name = "Transmute: Primal Shadow to Water",
-        itemId = 21885,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 22456, name = "Primal Shadow", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Water to Shadow (0)
-    {
-        id = 28581,
-        name = "Transmute: Primal Water to Shadow",
-        itemId = 22456,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 21885, name = "Primal Water", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Mana to Fire (0)
-    {
-        id = 28582,
-        name = "Transmute: Primal Mana to Fire",
-        itemId = 21884,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 22457, name = "Primal Mana", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Fire to Mana (0)
-    {
-        id = 28583,
-        name = "Transmute: Primal Fire to Mana",
-        itemId = 22457,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 21884, name = "Primal Fire", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Life to Earth (0)
-    {
-        id = 28584,
-        name = "Transmute: Primal Life to Earth",
-        itemId = 22452,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 21886, name = "Primal Life", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Transmute: Primal Earth to Life (0)
-    {
-        id = 28585,
-        name = "Transmute: Primal Earth to Life",
-        itemId = 21886,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
-        reagents = {
-            { itemId = 22452, name = "Primal Earth", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Super Rejuvenation Potion (0)
-    {
-        id = 28586,
-        name = "Super Rejuvenation Potion",
-        itemId = 22850,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22793, name = "Mana Thistle", count = 2 },
-            { itemId = 22786, name = "Dreaming Glory", count = 1 },
-            { itemId = 22791, name = "Netherbloom", count = 1 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Flask of Fortification (0)
-    {
-        id = 28587,
-        name = "Flask of Fortification",
-        itemId = 22851,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22794, name = "Fel Lotus", count = 1 },
-            { itemId = 22793, name = "Mana Thistle", count = 3 },
-            { itemId = 22790, name = "Ancient Lichen", count = 7 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Flask of Mighty Restoration (0)
-    {
-        id = 28588,
-        name = "Flask of Mighty Restoration",
-        itemId = 22853,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22794, name = "Fel Lotus", count = 1 },
-            { itemId = 22793, name = "Mana Thistle", count = 3 },
-            { itemId = 22786, name = "Dreaming Glory", count = 7 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Flask of Relentless Assault (0)
-    {
-        id = 28589,
-        name = "Flask of Relentless Assault",
-        itemId = 22854,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22794, name = "Fel Lotus", count = 1 },
-            { itemId = 22793, name = "Mana Thistle", count = 3 },
-            { itemId = 22789, name = "Terocone", count = 7 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Flask of Blinding Light (0)
-    {
-        id = 28590,
-        name = "Flask of Blinding Light",
-        itemId = 22861,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22794, name = "Fel Lotus", count = 1 },
-            { itemId = 22793, name = "Mana Thistle", count = 3 },
-            { itemId = 22791, name = "Netherbloom", count = 7 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Flask of Pure Death (0)
-    {
-        id = 28591,
-        name = "Flask of Pure Death",
-        itemId = 22866,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
-        reagents = {
-            { itemId = 22794, name = "Fel Lotus", count = 1 },
-            { itemId = 22793, name = "Mana Thistle", count = 3 },
-            { itemId = 22792, name = "Nightmare Vine", count = 7 },
-            { itemId = 18256, name = "Imbued Vial", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Cauldron of Major Arcane Protection (0)
-    {
-        id = 41458,
-        name = "Cauldron of Major Arcane Protection",
-        itemId = 32839,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
-        reagents = {
-            { itemId = 22457, name = "Primal Mana", count = 2 },
-            { itemId = 22793, name = "Mana Thistle", count = 7 },
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Cauldron of Major Fire Protection (0)
-    {
-        id = 41500,
-        name = "Cauldron of Major Fire Protection",
-        itemId = 32849,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
-        reagents = {
-            { itemId = 21884, name = "Primal Fire", count = 2 },
-            { itemId = 22793, name = "Mana Thistle", count = 7 },
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Cauldron of Major Frost Protection (0)
-    {
-        id = 41501,
-        name = "Cauldron of Major Frost Protection",
-        itemId = 32850,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
-        reagents = {
-            { itemId = 21885, name = "Primal Water", count = 2 },
-            { itemId = 22793, name = "Mana Thistle", count = 7 },
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Cauldron of Major Nature Protection (0)
-    {
-        id = 41502,
-        name = "Cauldron of Major Nature Protection",
-        itemId = 32851,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
-        reagents = {
-            { itemId = 21886, name = "Primal Life", count = 2 },
-            { itemId = 22793, name = "Mana Thistle", count = 7 },
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Cauldron of Major Shadow Protection (0)
-    {
-        id = 41503,
-        name = "Cauldron of Major Shadow Protection",
-        itemId = 32852,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
-        reagents = {
-            { itemId = 22456, name = "Primal Shadow", count = 2 },
-            { itemId = 22793, name = "Mana Thistle", count = 7 },
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Alchemy Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Elixir of Lion's Strength (1)
     {
         id = 2329,
@@ -2596,6 +2277,25 @@ local recipes = {
         },
         expansion = C.EXPANSION.TBC,
     },
+    -- Gurubashi Mojo Madness (315)
+    {
+        id = 24266,
+        name = "Gurubashi Mojo Madness",
+        itemId = 19931,
+        skillRequired = 315,
+        skillRange = { orange = 0, yellow = 315, green = 322, gray = 330 },
+        reagents = {
+            { itemId = 12938, name = "Blood of Heroes", count = 1 },
+            { itemId = 19943, name = "Massive Mojo", count = 1 },
+            { itemId = 12804, name = "Powerful Mojo", count = 6 },
+            { itemId = 13468, name = "Black Lotus", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
     -- Sneaking Potion (315)
     {
         id = 28546,
@@ -3348,6 +3048,96 @@ local recipes = {
         },
         expansion = C.EXPANSION.TBC,
     },
+    -- Cauldron of Major Arcane Protection (360)
+    {
+        id = 41458,
+        name = "Cauldron of Major Arcane Protection",
+        itemId = 32839,
+        skillRequired = 360,
+        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
+        reagents = {
+            { itemId = 22457, name = "Primal Mana", count = 2 },
+            { itemId = 22793, name = "Mana Thistle", count = 7 },
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Cauldron of Major Fire Protection (360)
+    {
+        id = 41500,
+        name = "Cauldron of Major Fire Protection",
+        itemId = 32849,
+        skillRequired = 360,
+        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
+        reagents = {
+            { itemId = 21884, name = "Primal Fire", count = 2 },
+            { itemId = 22793, name = "Mana Thistle", count = 7 },
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Cauldron of Major Frost Protection (360)
+    {
+        id = 41501,
+        name = "Cauldron of Major Frost Protection",
+        itemId = 32850,
+        skillRequired = 360,
+        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
+        reagents = {
+            { itemId = 21885, name = "Primal Water", count = 2 },
+            { itemId = 22793, name = "Mana Thistle", count = 7 },
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Cauldron of Major Nature Protection (360)
+    {
+        id = 41502,
+        name = "Cauldron of Major Nature Protection",
+        itemId = 32851,
+        skillRequired = 360,
+        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
+        reagents = {
+            { itemId = 21886, name = "Primal Life", count = 2 },
+            { itemId = 22793, name = "Mana Thistle", count = 7 },
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Cauldron of Major Shadow Protection (360)
+    {
+        id = 41503,
+        name = "Cauldron of Major Shadow Protection",
+        itemId = 32852,
+        skillRequired = 360,
+        skillRange = { orange = 0, yellow = 360, green = 370, gray = 380 },
+        reagents = {
+            { itemId = 22456, name = "Primal Shadow", count = 2 },
+            { itemId = 22793, name = "Mana Thistle", count = 7 },
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
     -- Elixir of Empowerment (365)
     {
         id = 28578,
@@ -3496,6 +3286,216 @@ local recipes = {
             cost = 250000,
         },
         expansion = C.EXPANSION.TBC,
+    },
+    -- Transmute: Primal Shadow to Water (385)
+    {
+        id = 28580,
+        name = "Transmute: Primal Shadow to Water",
+        itemId = 21885,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 22456, name = "Primal Shadow", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Transmute: Primal Water to Shadow (385)
+    {
+        id = 28581,
+        name = "Transmute: Primal Water to Shadow",
+        itemId = 22456,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 21885, name = "Primal Water", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Transmute: Primal Mana to Fire (385)
+    {
+        id = 28582,
+        name = "Transmute: Primal Mana to Fire",
+        itemId = 21884,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 22457, name = "Primal Mana", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Transmute: Primal Fire to Mana (385)
+    {
+        id = 28583,
+        name = "Transmute: Primal Fire to Mana",
+        itemId = 22457,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 21884, name = "Primal Fire", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Transmute: Primal Life to Earth (385)
+    {
+        id = 28584,
+        name = "Transmute: Primal Life to Earth",
+        itemId = 22452,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 21886, name = "Primal Life", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Transmute: Primal Earth to Life (385)
+    {
+        id = 28585,
+        name = "Transmute: Primal Earth to Life",
+        itemId = 21886,
+        skillRequired = 385,
+        skillRange = { orange = 0, yellow = 385, green = 392, gray = 400 },
+        reagents = {
+            { itemId = 22452, name = "Primal Earth", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Super Rejuvenation Potion (390)
+    {
+        id = 28586,
+        name = "Super Rejuvenation Potion",
+        itemId = 22850,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22793, name = "Mana Thistle", count = 2 },
+            { itemId = 22786, name = "Dreaming Glory", count = 1 },
+            { itemId = 22791, name = "Netherbloom", count = 1 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Flask of Fortification (390)
+    {
+        id = 28587,
+        name = "Flask of Fortification",
+        itemId = 22851,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22794, name = "Fel Lotus", count = 1 },
+            { itemId = 22793, name = "Mana Thistle", count = 3 },
+            { itemId = 22790, name = "Ancient Lichen", count = 7 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Flask of Mighty Restoration (390)
+    {
+        id = 28588,
+        name = "Flask of Mighty Restoration",
+        itemId = 22853,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22794, name = "Fel Lotus", count = 1 },
+            { itemId = 22793, name = "Mana Thistle", count = 3 },
+            { itemId = 22786, name = "Dreaming Glory", count = 7 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Flask of Relentless Assault (390)
+    {
+        id = 28589,
+        name = "Flask of Relentless Assault",
+        itemId = 22854,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22794, name = "Fel Lotus", count = 1 },
+            { itemId = 22793, name = "Mana Thistle", count = 3 },
+            { itemId = 22789, name = "Terocone", count = 7 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Flask of Blinding Light (390)
+    {
+        id = 28590,
+        name = "Flask of Blinding Light",
+        itemId = 22861,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22794, name = "Fel Lotus", count = 1 },
+            { itemId = 22793, name = "Mana Thistle", count = 3 },
+            { itemId = 22791, name = "Netherbloom", count = 7 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
+    },
+    -- Flask of Pure Death (390)
+    {
+        id = 28591,
+        name = "Flask of Pure Death",
+        itemId = 22866,
+        skillRequired = 390,
+        skillRange = { orange = 0, yellow = 390, green = 397, gray = 405 },
+        reagents = {
+            { itemId = 22794, name = "Fel Lotus", count = 1 },
+            { itemId = 22793, name = "Mana Thistle", count = 3 },
+            { itemId = 22792, name = "Nightmare Vine", count = 7 },
+            { itemId = 18256, name = "Imbued Vial", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Alchemy Trainer",
+        },
+        expansion = C.EXPANSION.WOTLK,
     },
 }
 

@@ -5,38 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Charred Wolf Meat (0)
-    {
-        id = 2538,
-        name = "Charred Wolf Meat",
-        itemId = 2679,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 45, green = 65, gray = 85 },
-        reagents = {
-            { itemId = 2672, name = "Stringy Wolf Meat", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Cooking Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Roasted Boar Meat (0)
-    {
-        id = 2540,
-        name = "Roasted Boar Meat",
-        itemId = 2681,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 45, green = 65, gray = 85 },
-        reagents = {
-            { itemId = 769, name = "Chunk of Boar Meat", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Cooking Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Brilliant Smallfish (1)
     {
         id = 7751,
@@ -244,6 +212,38 @@ local recipes = {
             type = C.SOURCE_TYPE.VENDOR,
             itemId = 6892,
             cost = 250,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Charred Wolf Meat (45)
+    {
+        id = 2538,
+        name = "Charred Wolf Meat",
+        itemId = 2679,
+        skillRequired = 45,
+        skillRange = { orange = 0, yellow = 45, green = 65, gray = 85 },
+        reagents = {
+            { itemId = 2672, name = "Stringy Wolf Meat", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Cooking Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Roasted Boar Meat (45)
+    {
+        id = 2540,
+        name = "Roasted Boar Meat",
+        itemId = 2681,
+        skillRequired = 45,
+        skillRange = { orange = 0, yellow = 45, green = 65, gray = 85 },
+        reagents = {
+            { itemId = 769, name = "Chunk of Boar Meat", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Cooking Trainer",
         },
         expansion = C.EXPANSION.VANILLA,
     },

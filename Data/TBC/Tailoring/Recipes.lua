@@ -5,25 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Gordok Ogre Suit (0)
-    {
-        id = 22813,
-        name = "Gordok Ogre Suit",
-        itemId = 18258,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 285, green = 290, gray = 295 },
-        reagents = {
-            { itemId = 14048, name = "Bolt of Runecloth", count = 2 },
-            { itemId = 8170, name = "Rugged Leather", count = 4 },
-            { itemId = 18240, name = "Ogre Tannin", count = 1 },
-            { itemId = 14341, name = "Rune Thread", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Tailoring Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Linen Cloak (1)
     {
         id = 2387,
@@ -3466,6 +3447,25 @@ local recipes = {
             type = C.SOURCE_TYPE.VENDOR,
             itemId = 14491,
             cost = 20000,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Gordok Ogre Suit (285)
+    {
+        id = 22813,
+        name = "Gordok Ogre Suit",
+        itemId = 18258,
+        skillRequired = 285,
+        skillRange = { orange = 0, yellow = 285, green = 290, gray = 295 },
+        reagents = {
+            { itemId = 14048, name = "Bolt of Runecloth", count = 2 },
+            { itemId = 8170, name = "Rugged Leather", count = 4 },
+            { itemId = 18240, name = "Ogre Tannin", count = 1 },
+            { itemId = 14341, name = "Rune Thread", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Tailoring Trainer",
         },
         expansion = C.EXPANSION.VANILLA,
     },

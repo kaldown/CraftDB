@@ -5,142 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Crafted Light Shot (0)
-    {
-        id = 3920,
-        name = "Crafted Light Shot",
-        itemId = 8067,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
-        reagents = {
-            { itemId = 4357, name = "Rough Blasting Powder", count = 1 },
-            { itemId = 2840, name = "Copper Bar", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Goblin Mortar (0)
-    {
-        id = 12716,
-        name = "Goblin Mortar",
-        itemId = 10577,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 225, green = 235, gray = 245 },
-        reagents = {
-            { itemId = 10559, name = "Mithril Tube", count = 2 },
-            { itemId = 3860, name = "Mithril Bar", count = 4 },
-            { itemId = 10505, name = "Solid Blasting Powder", count = 5 },
-            { itemId = 10558, name = "Gold Power Core", count = 1 },
-            { itemId = 7068, name = "Elemental Fire", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- The Mortar: Reloaded (0)
-    {
-        id = 13240,
-        name = "The Mortar: Reloaded",
-        itemId = 10577,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 205 },
-        reagents = {
-            { itemId = 10577, name = "Goblin Mortar", count = 1 },
-            { itemId = 3860, name = "Mithril Bar", count = 1 },
-            { itemId = 10505, name = "Solid Blasting Powder", count = 3 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Dimensional Ripper - Everlook (0)
-    {
-        id = 23486,
-        name = "Dimensional Ripper - Everlook",
-        itemId = 18984,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 285, green = 295, gray = 305 },
-        reagents = {
-            { itemId = 3860, name = "Mithril Bar", count = 10 },
-            { itemId = 18631, name = "Truesilver Transformer", count = 1 },
-            { itemId = 7077, name = "Heart of Fire", count = 4 },
-            { itemId = 7910, name = "Star Ruby", count = 2 },
-            { itemId = 10586, name = "The Big One", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Ultrasafe Transporter - Gadgetzan (0)
-    {
-        id = 23489,
-        name = "Ultrasafe Transporter - Gadgetzan",
-        itemId = 18986,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 285, green = 295, gray = 305 },
-        reagents = {
-            { itemId = 3860, name = "Mithril Bar", count = 12 },
-            { itemId = 18631, name = "Truesilver Transformer", count = 2 },
-            { itemId = 7075, name = "Core of Earth", count = 4 },
-            { itemId = 7079, name = "Globe of Water", count = 2 },
-            { itemId = 7909, name = "Aquamarine", count = 4 },
-            { itemId = 9060, name = "Inlaid Mithril Cylinder", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Dimensional Ripper - Area 52 (0)
-    {
-        id = 36954,
-        name = "Dimensional Ripper - Area 52",
-        itemId = 30542,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 350, green = 360, gray = 370 },
-        reagents = {
-            { itemId = 23784, name = "Adamantite Frame", count = 1 },
-            { itemId = 21884, name = "Primal Fire", count = 2 },
-            { itemId = 23826, name = "The Bigger One", count = 2 },
-            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 4 },
-            { itemId = 23786, name = "Khorium Power Core", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Ultrasafe Transporter - Toshley's Station (0)
-    {
-        id = 36955,
-        name = "Ultrasafe Transporter - Toshley's Station",
-        itemId = 30544,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 350, green = 360, gray = 370 },
-        reagents = {
-            { itemId = 23784, name = "Adamantite Frame", count = 1 },
-            { itemId = 22451, name = "Primal Air", count = 2 },
-            { itemId = 23787, name = "Felsteel Stabilizer", count = 2 },
-            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 4 },
-            { itemId = 23786, name = "Khorium Power Core", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Rough Blasting Powder (1)
     {
         id = 3918,
@@ -167,6 +31,23 @@ local recipes = {
         reagents = {
             { itemId = 4357, name = "Rough Blasting Powder", count = 2 },
             { itemId = 2589, name = "Linen Cloth", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Crafted Light Shot (30)
+    {
+        id = 3920,
+        name = "Crafted Light Shot",
+        itemId = 8067,
+        skillRequired = 30,
+        skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
+        reagents = {
+            { itemId = 4357, name = "Rough Blasting Powder", count = 1 },
+            { itemId = 2840, name = "Copper Bar", count = 1 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
@@ -1731,6 +1612,24 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- The Mortar: Reloaded (205)
+    {
+        id = 13240,
+        name = "The Mortar: Reloaded",
+        itemId = 10577,
+        skillRequired = 205,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 205 },
+        reagents = {
+            { itemId = 10577, name = "Goblin Mortar", count = 1 },
+            { itemId = 3860, name = "Mithril Bar", count = 1 },
+            { itemId = 10505, name = "Solid Blasting Powder", count = 3 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Pet Bombling (205)
     {
         id = 15628,
@@ -2048,6 +1947,26 @@ local recipes = {
         source = {
             type = C.SOURCE_TYPE.DROP,
             itemId = 10606,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Goblin Mortar (225)
+    {
+        id = 12716,
+        name = "Goblin Mortar",
+        itemId = 10577,
+        skillRequired = 225,
+        skillRange = { orange = 0, yellow = 225, green = 235, gray = 245 },
+        reagents = {
+            { itemId = 10559, name = "Mithril Tube", count = 2 },
+            { itemId = 3860, name = "Mithril Bar", count = 4 },
+            { itemId = 10505, name = "Solid Blasting Powder", count = 5 },
+            { itemId = 10558, name = "Gold Power Core", count = 1 },
+            { itemId = 7068, name = "Elemental Fire", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
         },
         expansion = C.EXPANSION.VANILLA,
     },
@@ -2955,6 +2874,47 @@ local recipes = {
             type = C.SOURCE_TYPE.VENDOR,
             itemId = 16050,
             cost = 20000,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Dimensional Ripper - Everlook (285)
+    {
+        id = 23486,
+        name = "Dimensional Ripper - Everlook",
+        itemId = 18984,
+        skillRequired = 285,
+        skillRange = { orange = 0, yellow = 285, green = 295, gray = 305 },
+        reagents = {
+            { itemId = 3860, name = "Mithril Bar", count = 10 },
+            { itemId = 18631, name = "Truesilver Transformer", count = 1 },
+            { itemId = 7077, name = "Heart of Fire", count = 4 },
+            { itemId = 7910, name = "Star Ruby", count = 2 },
+            { itemId = 10586, name = "The Big One", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Ultrasafe Transporter - Gadgetzan (285)
+    {
+        id = 23489,
+        name = "Ultrasafe Transporter - Gadgetzan",
+        itemId = 18986,
+        skillRequired = 285,
+        skillRange = { orange = 0, yellow = 285, green = 295, gray = 305 },
+        reagents = {
+            { itemId = 3860, name = "Mithril Bar", count = 12 },
+            { itemId = 18631, name = "Truesilver Transformer", count = 2 },
+            { itemId = 7075, name = "Core of Earth", count = 4 },
+            { itemId = 7079, name = "Globe of Water", count = 2 },
+            { itemId = 7909, name = "Aquamarine", count = 4 },
+            { itemId = 9060, name = "Inlaid Mithril Cylinder", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
         },
         expansion = C.EXPANSION.VANILLA,
     },
@@ -3935,6 +3895,46 @@ local recipes = {
             { itemId = 21886, name = "Primal Life", count = 10 },
             { itemId = 22456, name = "Primal Shadow", count = 10 },
             { itemId = 16006, name = "Delicate Arcanite Converter", count = 2 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Dimensional Ripper - Area 52 (350)
+    {
+        id = 36954,
+        name = "Dimensional Ripper - Area 52",
+        itemId = 30542,
+        skillRequired = 350,
+        skillRange = { orange = 0, yellow = 350, green = 360, gray = 370 },
+        reagents = {
+            { itemId = 23784, name = "Adamantite Frame", count = 1 },
+            { itemId = 21884, name = "Primal Fire", count = 2 },
+            { itemId = 23826, name = "The Bigger One", count = 2 },
+            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 4 },
+            { itemId = 23786, name = "Khorium Power Core", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Ultrasafe Transporter - Toshley's Station (350)
+    {
+        id = 36955,
+        name = "Ultrasafe Transporter - Toshley's Station",
+        itemId = 30544,
+        skillRequired = 350,
+        skillRange = { orange = 0, yellow = 350, green = 360, gray = 370 },
+        reagents = {
+            { itemId = 23784, name = "Adamantite Frame", count = 1 },
+            { itemId = 22451, name = "Primal Air", count = 2 },
+            { itemId = 23787, name = "Felsteel Stabilizer", count = 2 },
+            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 4 },
+            { itemId = 23786, name = "Khorium Power Core", count = 1 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,

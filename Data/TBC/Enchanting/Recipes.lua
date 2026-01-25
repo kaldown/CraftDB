@@ -5,96 +5,6 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Large Prismatic Shard (0)
-    {
-        id = 28022,
-        name = "Large Prismatic Shard",
-        itemId = 22449,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 335 },
-        reagents = {
-            { itemId = 22448, name = "Small Prismatic Shard", count = 3 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.VENDOR,
-            itemId = 22565,
-            cost = 60000,
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Runed Eternium Rod (0)
-    {
-        id = 32667,
-        name = "Runed Eternium Rod",
-        itemId = 22463,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 375, green = 385, gray = 400 },
-        reagents = {
-            { itemId = 25845, name = "Eternium Rod", count = 1 },
-            { itemId = 22446, name = "Greater Planar Essence", count = 12 },
-            { itemId = 22450, name = "Void Crystal", count = 2 },
-            { itemId = 23571, name = "Primal Might", count = 4 },
-            { itemId = 22462, name = "Runed Adamantite Rod", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.VENDOR,
-            itemId = 25849,
-            cost = 120000,
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Nexus Transformation (0)
-    {
-        id = 42613,
-        name = "Nexus Transformation",
-        itemId = 22448,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 300, green = 300, gray = 305 },
-        reagents = {
-            { itemId = 20725, name = "Nexus Crystal", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Enchanting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Small Prismatic Shard (0)
-    {
-        id = 42615,
-        name = "Small Prismatic Shard",
-        itemId = 22448,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 0, green = 335, gray = 335 },
-        reagents = {
-            { itemId = 22449, name = "Large Prismatic Shard", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Enchanting Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Void Shatter (0)
-    {
-        id = 45765,
-        name = "Void Shatter",
-        itemId = 22449,
-        skillRequired = 0,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 375 },
-        reagents = {
-            { itemId = 22450, name = "Void Crystal", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.REPUTATION,
-            factionId = 1077,
-            factionName = "Shattered Sun Offensive",
-            level = "Honored",
-            itemId = 34872,
-            cost = 150000,
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Runed Copper Rod (1)
     {
         id = 7421,
@@ -474,6 +384,22 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Nexus Transformation (300)
+    {
+        id = 42613,
+        name = "Nexus Transformation",
+        itemId = 22448,
+        skillRequired = 300,
+        skillRange = { orange = 0, yellow = 300, green = 300, gray = 305 },
+        reagents = {
+            { itemId = 20725, name = "Nexus Crystal", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Enchanting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Superior Mana Oil (310)
     {
         id = 28016,
@@ -519,6 +445,39 @@ local recipes = {
         skillRange = { orange = 325, yellow = 325, green = 330, gray = 335 },
         reagents = {
             { itemId = 22449, name = "Large Prismatic Shard", count = 4 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Enchanting Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Large Prismatic Shard (335)
+    {
+        id = 28022,
+        name = "Large Prismatic Shard",
+        itemId = 22449,
+        skillRequired = 335,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 335 },
+        reagents = {
+            { itemId = 22448, name = "Small Prismatic Shard", count = 3 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 22565,
+            cost = 60000,
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Small Prismatic Shard (335)
+    {
+        id = 42615,
+        name = "Small Prismatic Shard",
+        itemId = 22448,
+        skillRequired = 335,
+        skillRange = { orange = 0, yellow = 0, green = 335, gray = 335 },
+        reagents = {
+            { itemId = 22449, name = "Large Prismatic Shard", count = 1 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
@@ -579,6 +538,47 @@ local recipes = {
             type = C.SOURCE_TYPE.VENDOR,
             itemId = 25848,
             cost = 100000,
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Runed Eternium Rod (375)
+    {
+        id = 32667,
+        name = "Runed Eternium Rod",
+        itemId = 22463,
+        skillRequired = 375,
+        skillRange = { orange = 0, yellow = 375, green = 385, gray = 400 },
+        reagents = {
+            { itemId = 25845, name = "Eternium Rod", count = 1 },
+            { itemId = 22446, name = "Greater Planar Essence", count = 12 },
+            { itemId = 22450, name = "Void Crystal", count = 2 },
+            { itemId = 23571, name = "Primal Might", count = 4 },
+            { itemId = 22462, name = "Runed Adamantite Rod", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 25849,
+            cost = 120000,
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Void Shatter (375)
+    {
+        id = 45765,
+        name = "Void Shatter",
+        itemId = 22449,
+        skillRequired = 375,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 375 },
+        reagents = {
+            { itemId = 22450, name = "Void Crystal", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.REPUTATION,
+            factionId = 1077,
+            factionName = "Shattered Sun Offensive",
+            level = "Honored",
+            itemId = 34872,
+            cost = 150000,
         },
         expansion = C.EXPANSION.TBC,
     },
