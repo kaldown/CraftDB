@@ -14,18 +14,20 @@ Comprehensive crafting recipe database and API for World of Warcraft addon devel
 
 ## Profession Coverage
 
-| Profession | Status |
-|------------|--------|
-| Cooking | Complete |
-| First Aid | Complete |
-| Mining | Complete (smelting) |
-| Engineering | Complete |
-| Alchemy | In Progress |
-| Blacksmithing | In Progress |
-| Enchanting | In Progress |
-| Jewelcrafting | In Progress |
-| Leatherworking | In Progress |
-| Tailoring | In Progress |
+All 10 professions are complete with Wowhead-verified difficulty data:
+
+| Profession | Recipes | Coverage |
+|------------|---------|----------|
+| Alchemy | 186 | Complete |
+| Blacksmithing | 385 | Complete |
+| Cooking | 116 | Complete |
+| Enchanting | 31 | Complete |
+| Engineering | 250 | Complete |
+| First Aid | 16 | Complete |
+| Jewelcrafting | 261 | Complete |
+| Leatherworking | 379 | Complete |
+| Mining | 21 | Complete (smelting) |
+| Tailoring | 329 | Complete |
 
 ## Usage
 
