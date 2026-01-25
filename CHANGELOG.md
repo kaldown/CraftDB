@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5] - 2026-01-25
+
+### Fixed
+
+- Specialty recipes with orange=0 (e.g., Dimensional Ripper - Area 52) now use the correct skillRequired value
+- Generator now uses first non-zero threshold (yellow/green/gray) when orange=0
+- Fixes pathfinder suggesting high-level specialty items at low skill levels
+
 ## [0.2.4] - 2026-01-24
 
 ### Fixed
