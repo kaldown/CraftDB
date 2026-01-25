@@ -134,40 +134,6 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
-    -- Netherweave Bandage (185)
-    {
-        id = 27032,
-        name = "Netherweave Bandage",
-        itemId = 21990,
-        skillRequired = 185,
-        skillRange = { orange = 185, yellow = 185, green = 205, gray = 225 },
-        reagents = {
-            { itemId = 21877, name = "Netherweave Cloth", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.VENDOR,
-            itemId = 21992,
-            cost = 20000,
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Heavy Netherweave Bandage (185)
-    {
-        id = 27033,
-        name = "Heavy Netherweave Bandage",
-        itemId = 21991,
-        skillRequired = 185,
-        skillRange = { orange = 185, yellow = 185, green = 205, gray = 225 },
-        reagents = {
-            { itemId = 21877, name = "Netherweave Cloth", count = 2 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.VENDOR,
-            itemId = 21993,
-            cost = 40000,
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Mageweave Bandage (210)
     {
         id = 10840,
@@ -270,12 +236,46 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Netherweave Bandage (330)
+    {
+        id = 27032,
+        name = "Netherweave Bandage",
+        itemId = 21990,
+        skillRequired = 330,
+        skillRange = { orange = 330, yellow = 330, green = 360, gray = 390 },
+        reagents = {
+            { itemId = 21877, name = "Netherweave Cloth", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 21992,
+            cost = 20000,
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Heavy Netherweave Bandage (360)
+    {
+        id = 27033,
+        name = "Heavy Netherweave Bandage",
+        itemId = 21991,
+        skillRequired = 360,
+        skillRange = { orange = 360, yellow = 360, green = 385, gray = 410 },
+        reagents = {
+            { itemId = 21877, name = "Netherweave Cloth", count = 2 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 21993,
+            cost = 40000,
+        },
+        expansion = C.EXPANSION.TBC,
+    },
 }
 
 CraftLib:RegisterProfession("firstAid", {
     id = C.PROFESSION_ID.FIRST_AID,
     name = "First Aid",
-    expansion = C.EXPANSION.VANILLA,
+    expansion = C.EXPANSION.TBC,
     milestones = { 75, 150, 225, 300, 375 },
     recipes = recipes,
 })

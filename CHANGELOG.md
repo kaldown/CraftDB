@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.6] - 2026-01-25
+
+### Fixed
+
+- Fixed Wowhead fetch script parsing bug that captured wrong difficulty data
+- Script now looks for spell-specific data instead of first match on page
+- Re-fetched corrupted recipes: Fel Iron Bomb, Adamantite Grenade, Cooking TBC recipes, Netherweave Bandages
+- Added --spells flag to allow re-fetching specific recipes even if already verified
+
 ## [0.2.5] - 2026-01-25
 
 ### Fixed

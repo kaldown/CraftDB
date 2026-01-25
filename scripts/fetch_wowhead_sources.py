@@ -60,14 +60,36 @@ def fetch_wowhead_spell(spell_id: int, expansion: str = "classic") -> dict | Non
         print(f"  Error fetching {url}: {e}", file=sys.stderr)
         return None
 
-    # Extract colors array from HTML/JavaScript: "colors":[30,45,52,60]
-    colors_match = re.search(r'"colors":\[(\d+),(\d+),(\d+),(\d+)\]', content)
-    if colors_match:
+    # Strategy 1: Look for colors array in the spell's data object
+    # Wowhead embeds spell data as {"id":SPELL_ID,...,"colors":[...]}
+    # Find the colors array that appears AFTER the spell ID reference
+    spell_id_pattern = rf'"id":{spell_id}[,\}}]'
+    spell_id_match = re.search(spell_id_pattern, content)
+
+    if spell_id_match:
+        # Search for colors array after the spell ID
+        search_start = spell_id_match.start()
+        remaining_content = content[search_start:search_start + 2000]  # Look in nearby context
+        colors_match = re.search(r'"colors":\[(\d+),(\d+),(\d+),(\d+)\]', remaining_content)
+        if colors_match:
+            return {
+                "orange": int(colors_match.group(1)),
+                "yellow": int(colors_match.group(2)),
+                "green": int(colors_match.group(3)),
+                "gray": int(colors_match.group(4)),
+            }
+
+    # Strategy 2: Find all colors arrays and use the LAST one (main spell data is usually last)
+    # This is a fallback since Wowhead pages often have related recipes listed first
+    all_colors = re.findall(r'"colors":\[(\d+),(\d+),(\d+),(\d+)\]', content)
+    if all_colors:
+        # Use the last match - main spell data is typically at the end of the page
+        last_match = all_colors[-1]
         return {
-            "orange": int(colors_match.group(1)),
-            "yellow": int(colors_match.group(2)),
-            "green": int(colors_match.group(3)),
-            "gray": int(colors_match.group(4)),
+            "orange": int(last_match[0]),
+            "yellow": int(last_match[1]),
+            "green": int(last_match[2]),
+            "gray": int(last_match[3]),
         }
 
     # Fallback: try learnedat field
@@ -255,12 +277,16 @@ def process_difficulty(sources_file: Path, dry_run: bool, specific_spells: list[
     recipes_to_fetch = []
     for spell_id, recipe in data["recipes"].items():
         difficulty = recipe.get("difficulty", {})
-        # Skip if already verified from Wowhead
-        if difficulty.get("certainty") == "WOWHEAD":
-            continue
 
-        if specific_spells and int(spell_id) not in specific_spells:
-            continue
+        # If specific spells requested, only process those (allows re-fetching)
+        if specific_spells:
+            if int(spell_id) not in specific_spells:
+                continue
+            # Allow re-fetching even if already verified
+        else:
+            # Skip if already verified from Wowhead (normal mode)
+            if difficulty.get("certainty") == "WOWHEAD":
+                continue
 
         recipes_to_fetch.append((spell_id, recipe))
 

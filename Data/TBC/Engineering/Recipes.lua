@@ -1245,42 +1245,6 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
-    -- Fel Iron Bomb (185)
-    {
-        id = 30310,
-        name = "Fel Iron Bomb",
-        itemId = 23736,
-        skillRequired = 185,
-        skillRange = { orange = 185, yellow = 185, green = 205, gray = 225 },
-        reagents = {
-            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
-            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 2 },
-            { itemId = 23781, name = "Elemental Blasting Powder", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- Adamantite Grenade (185)
-    {
-        id = 30311,
-        name = "Adamantite Grenade",
-        itemId = 23737,
-        skillRequired = 185,
-        skillRange = { orange = 185, yellow = 185, green = 205, gray = 225 },
-        reagents = {
-            { itemId = 23446, name = "Adamantite Bar", count = 4 },
-            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 2 },
-            { itemId = 23781, name = "Elemental Blasting Powder", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
     -- Big Iron Bomb (190)
     {
         id = 3967,
@@ -3231,6 +3195,24 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Fel Iron Bomb (300)
+    {
+        id = 30310,
+        name = "Fel Iron Bomb",
+        itemId = 23736,
+        skillRequired = 300,
+        skillRange = { orange = 300, yellow = 320, green = 330, gray = 340 },
+        reagents = {
+            { itemId = 23782, name = "Fel Iron Casing", count = 1 },
+            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 2 },
+            { itemId = 23781, name = "Elemental Blasting Powder", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Zapthrottle Mote Extractor (305)
     {
         id = 30548,
@@ -3388,6 +3370,24 @@ local recipes = {
         reagents = {
             { itemId = 23446, name = "Adamantite Bar", count = 4 },
             { itemId = 22452, name = "Primal Earth", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.TBC,
+    },
+    -- Adamantite Grenade (325)
+    {
+        id = 30311,
+        name = "Adamantite Grenade",
+        itemId = 23737,
+        skillRequired = 325,
+        skillRange = { orange = 325, yellow = 335, green = 345, gray = 355 },
+        reagents = {
+            { itemId = 23446, name = "Adamantite Bar", count = 4 },
+            { itemId = 23783, name = "Handful of Fel Iron Bolts", count = 2 },
+            { itemId = 23781, name = "Elemental Blasting Powder", count = 1 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
