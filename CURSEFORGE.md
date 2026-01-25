@@ -41,6 +41,13 @@ local difficulty = CraftLib:GetRecipeDifficulty(recipe, 300)
 - `CraftLib:GetRecipeByProduct(itemId)` - Find all recipes that produce an item
 - `CraftLib:GetRecipeDifficulty(recipe, skillLevel)` - Get difficulty color
 
+## Supported Game Versions
+
+- Classic Era
+- Season of Discovery
+- Anniversary
+- Hardcore
+
 ## Addons Using CraftLib
 
 - [LazyProf](https://www.curseforge.com/wow/addons/lazyprof) - Profession leveling optimizer

@@ -128,6 +128,13 @@ python scripts/generate_recipes.py --version 2.5.5.65463 --profession FirstAid
 
 - [LazyProf](https://github.com/kaldown/LazyProf) - Profession leveling optimizer
 
+## Supported Game Versions
+
+- Classic Era
+- Season of Discovery
+- Anniversary
+- Hardcore
+
 ## License
 
 MIT - See [LICENSE](LICENSE) for details.
