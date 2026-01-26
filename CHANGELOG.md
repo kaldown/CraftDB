@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.7] - 2026-01-26
+
+### Fixed
+
+- Filtered 46 removed/placeholder recipes from generated Lua files
+- Recipes without Wowhead-verified difficulty are now excluded (never implemented or removed from game)
+- Examples: Crystal Infused Bandage, Stormcloth set, Goblin Radio, Explosive Arrow
+
 ## [0.2.6] - 2026-01-25
 
 ### Fixed
