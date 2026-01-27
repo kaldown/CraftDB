@@ -2,10 +2,6 @@
 -- CraftLib public API
 local ADDON_NAME, CraftLib = ...
 
--- Version info
-CraftLib.version = "0.1.0"
-CraftLib.dataVersion = 1
-
 -- Internal storage
 CraftLib.professions = {}
 CraftLib.items = {}
@@ -154,3 +150,17 @@ end
 
 -- Make CraftLib globally accessible
 _G.CraftLib = CraftLib
+
+--------------------------------------------------------------------------------
+-- Initialization
+--------------------------------------------------------------------------------
+
+local frame = CreateFrame("Frame")
+frame:RegisterEvent("ADDON_LOADED")
+frame:SetScript("OnEvent", function(self, event, loadedAddon)
+    if loadedAddon == ADDON_NAME then
+        local version = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Version") or "?"
+        print("|cff33ff99CraftLib|r v" .. version .. " loaded.")
+        self:UnregisterEvent("ADDON_LOADED")
+    end
+end)
