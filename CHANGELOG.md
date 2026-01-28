@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.11] - 2026-01-28
+
+### Fixed
+
+- Improved orange=0 recipe handling with threshold-based skill requirements
+- Early-game recipes (yellow ≤ 75) now correctly use skillRequired=1
+- Late-game recipes (yellow > 75) use yellow value as skillRequired
+- Fixes Jewelcrafting and Mining showing empty paths for unlearned professions
+- Prevents high-level Alchemy flasks/transmutes from appearing at skill 1
+
 ## [0.2.10] - 2026-01-27
 
 ### Added

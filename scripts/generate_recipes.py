@@ -308,18 +308,39 @@ def extract_recipes(
             # Orange = 2 * yellow - gray (assumes equal gaps, but not always true)
             orange = max(1, 2 * yellow - gray)
 
-        # For specialty recipes where orange=0 (always orange until yellow),
-        # use the first non-zero threshold as the minimum skill requirement.
-        # This prevents pathfinder from suggesting high-level items at low skill.
-        # Priority: orange > yellow > green > gray (first non-zero wins)
+        # Determine skill_required (minimum skill to acquire AND craft this recipe)
+        #
+        # IMPORTANT: orange=0 handling (see CraftLib CLAUDE.md for full context)
+        #
+        # When orange=0, the recipe is "always orange" (100% skillup) until yellow.
+        # However, orange=0 appears in two different contexts:
+        #
+        # 1. EARLY-GAME recipes (yellow <= 75): Meant to be available from skill 1
+        #    Example: Delicate Copper Wire (JC) - orange=0, yellow=20
+        #    These are starter recipes that should show at skill 1.
+        #
+        # 2. LATE-GAME recipes (yellow > 75): High-level recipes with skill requirements
+        #    Example: Flask of Fortification (Alchemy) - orange=0, yellow=390
+        #    These require high skill to LEARN from trainer, even though once learned
+        #    they're "always orange". Players shouldn't see these at skill 1.
+        #
+        # The threshold of 75 corresponds to the first profession milestone (Journeyman).
+        # Recipes below this are "Apprentice level" and meant to be available from start.
+        #
+        # Without this fix, the pathfinder would suggest Flask of Fortification at skill 1
+        # if the player has AH prices for the reagents (Fel Lotus, etc.).
+        #
+        EARLY_GAME_THRESHOLD = 75  # First profession milestone (Apprentice -> Journeyman)
+
         if orange > 0:
             skill_required = orange
-        elif yellow > 0:
-            skill_required = yellow
-        elif green > 0:
-            skill_required = green
+        elif yellow <= EARLY_GAME_THRESHOLD:
+            # Early-game recipe: available from skill 1
+            skill_required = 1
         else:
-            skill_required = gray
+            # Late-game recipe: use yellow as the effective skill requirement
+            # This prevents high-level recipes from appearing at low skill levels
+            skill_required = yellow
 
         # Get reagents
         reagents = []

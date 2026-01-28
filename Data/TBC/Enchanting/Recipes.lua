@@ -23,6 +23,59 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
+    -- Large Prismatic Shard (1)
+    {
+        id = 28022,
+        name = "Large Prismatic Shard",
+        itemId = 22449,
+        skillRequired = 1,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 335 },
+        reagents = {
+            { itemId = 22448, name = "Small Prismatic Shard", count = 3 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.VENDOR,
+            itemId = 22565,
+            cost = 60000,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Small Prismatic Shard (1)
+    {
+        id = 42615,
+        name = "Small Prismatic Shard",
+        itemId = 22448,
+        skillRequired = 1,
+        skillRange = { orange = 0, yellow = 0, green = 335, gray = 335 },
+        reagents = {
+            { itemId = 22449, name = "Large Prismatic Shard", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Enchanting Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- Void Shatter (1)
+    {
+        id = 45765,
+        name = "Void Shatter",
+        itemId = 22449,
+        skillRequired = 1,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 375 },
+        reagents = {
+            { itemId = 22450, name = "Void Crystal", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.REPUTATION,
+            factionId = 1077,
+            factionName = "Shattered Sun Offensive",
+            level = "Honored",
+            itemId = 34872,
+            cost = 150000,
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
     -- Lesser Magic Wand (10)
     {
         id = 14293,
@@ -435,39 +488,6 @@ local recipes = {
         },
         expansion = C.EXPANSION.TBC,
     },
-    -- Large Prismatic Shard (335)
-    {
-        id = 28022,
-        name = "Large Prismatic Shard",
-        itemId = 22449,
-        skillRequired = 335,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 335 },
-        reagents = {
-            { itemId = 22448, name = "Small Prismatic Shard", count = 3 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.VENDOR,
-            itemId = 22565,
-            cost = 60000,
-        },
-        expansion = C.EXPANSION.TBC,
-    },
-    -- Small Prismatic Shard (335)
-    {
-        id = 42615,
-        name = "Small Prismatic Shard",
-        itemId = 22448,
-        skillRequired = 335,
-        skillRange = { orange = 0, yellow = 0, green = 335, gray = 335 },
-        reagents = {
-            { itemId = 22449, name = "Large Prismatic Shard", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Enchanting Trainer",
-        },
-        expansion = C.EXPANSION.TBC,
-    },
     -- Superior Wizard Oil (340)
     {
         id = 28019,
@@ -542,26 +562,6 @@ local recipes = {
             type = C.SOURCE_TYPE.VENDOR,
             itemId = 25849,
             cost = 120000,
-        },
-        expansion = C.EXPANSION.TBC,
-    },
-    -- Void Shatter (375)
-    {
-        id = 45765,
-        name = "Void Shatter",
-        itemId = 22449,
-        skillRequired = 375,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 375 },
-        reagents = {
-            { itemId = 22450, name = "Void Crystal", count = 1 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.REPUTATION,
-            factionId = 1077,
-            factionName = "Shattered Sun Offensive",
-            level = "Honored",
-            itemId = 34872,
-            cost = 150000,
         },
         expansion = C.EXPANSION.TBC,
     },

@@ -5,12 +5,12 @@ local ADDON_NAME, CraftLib = ...
 local C = CraftLib.Constants
 
 local recipes = {
-    -- Smelt Copper (25)
+    -- Smelt Copper (1)
     {
         id = 2657,
         name = "Smelt Copper",
         itemId = 2840,
-        skillRequired = 25,
+        skillRequired = 1,
         skillRange = { orange = 0, yellow = 25, green = 47, gray = 70 },
         reagents = {
             { itemId = 2770, name = "Copper Ore", count = 1 },

@@ -38,16 +38,34 @@ local recipes = {
         },
         expansion = C.EXPANSION.VANILLA,
     },
-    -- Crafted Light Shot (30)
+    -- Crafted Light Shot (1)
     {
         id = 3920,
         name = "Crafted Light Shot",
         itemId = 8067,
-        skillRequired = 30,
+        skillRequired = 1,
         skillRange = { orange = 0, yellow = 30, green = 45, gray = 60 },
         reagents = {
             { itemId = 4357, name = "Rough Blasting Powder", count = 1 },
             { itemId = 2840, name = "Copper Bar", count = 1 },
+        },
+        source = {
+            type = C.SOURCE_TYPE.TRAINER,
+            npcName = "Any Engineering Trainer",
+        },
+        expansion = C.EXPANSION.VANILLA,
+    },
+    -- The Mortar: Reloaded (1)
+    {
+        id = 13240,
+        name = "The Mortar: Reloaded",
+        itemId = 10577,
+        skillRequired = 1,
+        skillRange = { orange = 0, yellow = 0, green = 0, gray = 205 },
+        reagents = {
+            { itemId = 10577, name = "Goblin Mortar", count = 1 },
+            { itemId = 3860, name = "Mithril Bar", count = 1 },
+            { itemId = 10505, name = "Solid Blasting Powder", count = 3 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
@@ -1533,24 +1551,6 @@ local recipes = {
             { itemId = 3860, name = "Mithril Bar", count = 4 },
             { itemId = 8151, name = "Flask of Mojo", count = 4 },
             { itemId = 1529, name = "Jade", count = 2 },
-        },
-        source = {
-            type = C.SOURCE_TYPE.TRAINER,
-            npcName = "Any Engineering Trainer",
-        },
-        expansion = C.EXPANSION.VANILLA,
-    },
-    -- The Mortar: Reloaded (205)
-    {
-        id = 13240,
-        name = "The Mortar: Reloaded",
-        itemId = 10577,
-        skillRequired = 205,
-        skillRange = { orange = 0, yellow = 0, green = 0, gray = 205 },
-        reagents = {
-            { itemId = 10577, name = "Goblin Mortar", count = 1 },
-            { itemId = 3860, name = "Mithril Bar", count = 1 },
-            { itemId = 10505, name = "Solid Blasting Powder", count = 3 },
         },
         source = {
             type = C.SOURCE_TYPE.TRAINER,
