@@ -269,7 +269,7 @@ def process_pending_sources(sources_file: Path, dry_run: bool, specific_items: l
     return 0
 
 
-def process_difficulty(sources_file: Path, dry_run: bool, specific_spells: list[int] | None, expansion: str = "tbc") -> int:
+def process_difficulty(sources_file: Path, dry_run: bool, specific_spells: list[int] | None, expansion: str = "tbc", force: bool = False) -> int:
     """Fetch difficulty levels from Wowhead for all recipes."""
     with open(sources_file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -283,6 +283,9 @@ def process_difficulty(sources_file: Path, dry_run: bool, specific_spells: list[
             if int(spell_id) not in specific_spells:
                 continue
             # Allow re-fetching even if already verified
+        elif force:
+            # Force mode: re-fetch everything regardless of certainty
+            pass
         else:
             # Skip if already verified from Wowhead (normal mode)
             if difficulty.get("certainty") == "WOWHEAD":
@@ -322,6 +325,7 @@ def process_difficulty(sources_file: Path, dry_run: bool, specific_spells: list[
             "green": wowhead_data["green"],
             "gray": wowhead_data["gray"],
             "certainty": "WOWHEAD",
+            "expansion": expansion,
         }
         print(f"OK -> {wowhead_data['orange']}/{wowhead_data['yellow']}/{wowhead_data['green']}/{wowhead_data['gray']}", file=sys.stderr)
         updated += 1
@@ -355,18 +359,24 @@ def main() -> int:
         "--sources-dir",
         type=Path,
         default=Path("Data/Sources"),
-        help="Sources directory",
+        help="Base sources directory (expansion subfolder added automatically)",
     )
     parser.add_argument("--dry-run", action="store_true", help="Show what would be fetched")
     parser.add_argument("--items", type=int, nargs="+", help="Specific item IDs to fetch (for sources)")
     parser.add_argument("--difficulty", action="store_true", help="Fetch difficulty levels instead of sources")
     parser.add_argument("--spells", type=int, nargs="+", help="Specific spell IDs to fetch (for difficulty)")
     parser.add_argument("--expansion", default="tbc", help="Wowhead expansion subdomain (default: tbc)")
+    parser.add_argument("--force", action="store_true", help="Re-fetch all recipes even if already verified")
     args = parser.parse_args()
 
-    # Find sources file
+    # Map expansion subdomain to folder name
+    exp_folder = {"classic": "Classic", "tbc": "TBC", "wotlk": "WotLK", "cata": "Cata"}.get(
+        args.expansion.lower(), args.expansion.upper()
+    )
+
+    # Find sources file (expansion-specific path)
     prof_name = args.profession.replace(" ", "")
-    sources_file = args.sources_dir / f"{prof_name}.json"
+    sources_file = args.sources_dir / exp_folder / f"{prof_name}.json"
 
     if not sources_file.exists():
         print(f"Sources file not found: {sources_file}", file=sys.stderr)
@@ -374,7 +384,7 @@ def main() -> int:
         return 1
 
     if args.difficulty:
-        return process_difficulty(sources_file, args.dry_run, args.spells, args.expansion)
+        return process_difficulty(sources_file, args.dry_run, args.spells, args.expansion, args.force)
     else:
         return process_pending_sources(sources_file, args.dry_run, args.items, args.expansion)
 

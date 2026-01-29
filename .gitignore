@@ -21,7 +21,8 @@ docs/agents/
 *~
 
 # Verified sources (local development data, not for release)
-Data/Sources/*.json
+# Structure: Data/Sources/{Expansion}/{Profession}.json
+Data/Sources/*/*.json
 
 # Build artifacts
 *.zip

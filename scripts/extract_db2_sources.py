@@ -225,9 +225,19 @@ def main() -> int:
         "--output-dir",
         type=Path,
         default=Path("Data/Sources"),
-        help="Output directory for source files",
+        help="Base output directory for source files (expansion subfolder added automatically)",
+    )
+    parser.add_argument(
+        "--expansion",
+        default="tbc",
+        help="Target expansion (classic, tbc, wotlk, cata). Default: tbc",
     )
     args = parser.parse_args()
+
+    # Map expansion to folder name
+    exp_folder = {"classic": "Classic", "tbc": "TBC", "wotlk": "WotLK", "cata": "Cata"}.get(
+        args.expansion.lower(), args.expansion.upper()
+    )
 
     # Find profession
     prof_key = args.profession.lower().replace(" ", "")
@@ -250,7 +260,8 @@ def main() -> int:
         return 1
 
     # Load existing sources (to preserve WOWHEAD entries)
-    output_file = args.output_dir / f"{profession['name'].replace(' ', '')}.json"
+    expansion_dir = args.output_dir / exp_folder
+    output_file = expansion_dir / f"{profession['name'].replace(' ', '')}.json"
     existing = load_existing_sources(output_file)
 
     # Build indexes
@@ -274,7 +285,7 @@ def main() -> int:
         certainty_counts[cert] = certainty_counts.get(cert, 0) + 1
 
     # Write output
-    args.output_dir.mkdir(parents=True, exist_ok=True)
+    expansion_dir.mkdir(parents=True, exist_ok=True)
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(sources, f, indent=2)
 

@@ -1,0 +1,68 @@
+{
+  "_comment": "Recipes that exist in DB2 but were never implemented or were removed. These are excluded from generated Lua files. Review when TBC Classic is stable.",
+  "_generated": "2026-01-26",
+  "_reason": "No Wowhead difficulty data available - indicates removed/placeholder content",
+  "recipes": {
+    "Alchemy": [
+      { "spellId": 2336, "name": "Elixir of Tongues", "notes": "No Wowhead data" },
+      { "spellId": 6619, "name": "Cowardly Flight Potion", "notes": "No Wowhead data" },
+      { "spellId": 11447, "name": "Elixir of Waterwalking", "notes": "No Wowhead data" },
+      { "spellId": 17579, "name": "Greater Holy Protection Potion", "notes": "No Wowhead data" }
+    ],
+    "Blacksmithing": [
+      { "spellId": 2671, "name": "Rough Bronze Bracers", "notes": "No Wowhead data" },
+      { "spellId": 8366, "name": "Ironforge Chain", "notes": "No Wowhead data" },
+      { "spellId": 8368, "name": "Ironforge Gauntlets", "notes": "No Wowhead data" },
+      { "spellId": 9942, "name": "Mithril Scale Gloves", "notes": "No Wowhead data" },
+      { "spellId": 16960, "name": "Thorium Greatsword", "notes": "No Wowhead data" },
+      { "spellId": 16965, "name": "Bleakwood Hew", "notes": "No Wowhead data" },
+      { "spellId": 16967, "name": "Inlaid Thorium Hammer", "notes": "No Wowhead data" },
+      { "spellId": 16980, "name": "Rune Edge", "notes": "No Wowhead data" },
+      { "spellId": 16986, "name": "Blood Talon", "notes": "No Wowhead data" },
+      { "spellId": 16987, "name": "Darkspear", "notes": "No Wowhead data" }
+    ],
+    "Enchanting": [
+      { "spellId": 28021, "name": "Arcane Dust", "notes": "Briefly in Beta, removed" }
+    ],
+    "Engineering": [
+      { "spellId": 12719, "name": "Explosive Arrow", "notes": "Never implemented in TBC" },
+      { "spellId": 12720, "name": "Goblin \"Boom\" Box", "notes": "Removed" },
+      { "spellId": 12722, "name": "Goblin Radio", "notes": "Removed" },
+      { "spellId": 12900, "name": "Mobile Alarm", "notes": "Removed" },
+      { "spellId": 12904, "name": "Gnomish Ham Radio", "notes": "Removed" },
+      { "spellId": 30342, "name": "Red Smoke Flare", "notes": "No Wowhead data" },
+      { "spellId": 30343, "name": "Blue Smoke Flare", "notes": "No Wowhead data" },
+      { "spellId": 30549, "name": "Critter Enlarger", "notes": "No Wowhead data" },
+      { "spellId": 30561, "name": "Goblin Tonk Controller", "notes": "Removed" },
+      { "spellId": 30573, "name": "Gnomish Tonk Controller", "notes": "Removed" }
+    ],
+    "FirstAid": [
+      { "spellId": 30021, "name": "Crystal Infused Bandage", "notes": "Never implemented, placeholder reagent zzOLD[PH]" }
+    ],
+    "Jewelcrafting": [
+      { "spellId": 25614, "name": "Silver Rose Pendant", "notes": "No Wowhead data" },
+      { "spellId": 32810, "name": "Primal Stone Statue", "notes": "No Wowhead data" }
+    ],
+    "Leatherworking": [
+      { "spellId": 10550, "name": "Nightscape Cloak", "notes": "No Wowhead data" },
+      { "spellId": 19106, "name": "Onyxia Scale Breastplate", "notes": "No Wowhead data" }
+    ],
+    "Tailoring": [
+      { "spellId": 7636, "name": "Green Woolen Robe", "notes": "No Wowhead data" },
+      { "spellId": 8778, "name": "Boots of Darkness", "notes": "No Wowhead data" },
+      { "spellId": 12062, "name": "Stormcloth Pants", "notes": "No Wowhead data" },
+      { "spellId": 12063, "name": "Stormcloth Gloves", "notes": "No Wowhead data" },
+      { "spellId": 12068, "name": "Stormcloth Vest", "notes": "No Wowhead data" },
+      { "spellId": 12083, "name": "Stormcloth Headband", "notes": "No Wowhead data" },
+      { "spellId": 12087, "name": "Stormcloth Shoulders", "notes": "No Wowhead data" },
+      { "spellId": 12090, "name": "Stormcloth Boots", "notes": "No Wowhead data" },
+      { "spellId": 31461, "name": "Heavy Netherweave Net", "notes": "No Wowhead data" },
+      { "spellId": 36670, "name": "Lifeblood Belt", "notes": "No Wowhead data" },
+      { "spellId": 36672, "name": "Lifeblood Bracers", "notes": "No Wowhead data" },
+      { "spellId": 36669, "name": "Lifeblood Leggings", "notes": "No Wowhead data" },
+      { "spellId": 36667, "name": "Netherflame Belt", "notes": "No Wowhead data" },
+      { "spellId": 36668, "name": "Netherflame Boots", "notes": "No Wowhead data" },
+      { "spellId": 36665, "name": "Netherflame Robe", "notes": "No Wowhead data" }
+    ]
+  }
+}

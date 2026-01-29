@@ -535,11 +535,11 @@ def main() -> int:
     if overrides:
         print(f"Loaded {len(overrides)} source overrides", file=sys.stderr)
 
-    # Load verified sources (per-profession)
-    sources_dir = Path(__file__).parent.parent / "Data" / "Sources"
-
-    # Expansion name for output path
+    # Expansion name for paths
     exp_name = {1: "Classic", 2: "TBC", 3: "WotLK", 4: "Cata"}.get(args.expansion, "TBC")
+
+    # Load verified sources (per-expansion, per-profession)
+    sources_dir = Path(__file__).parent.parent / "Data" / "Sources" / exp_name
 
     # Filter professions if specified
     professions_to_generate = PROFESSIONS.items()

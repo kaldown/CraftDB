@@ -126,14 +126,21 @@ def main() -> int:
     parser.add_argument("--check-wowhead", action="store_true",
                         help="Cross-reference suspicious recipes with Wowhead (slow)")
     parser.add_argument("--profession", help="Check only this profession")
+    parser.add_argument("--expansion", help="Check only this expansion (classic, tbc, wotlk, cata)")
     parser.add_argument("--data-dir", type=Path, default=Path("Data"),
                         help="Recipe data directory")
     args = parser.parse_args()
 
     issues_found = 0
 
-    # Find all recipe files
-    recipe_files = list(args.data_dir.glob("**/Recipes.lua"))
+    # Find recipe files (optionally filtered by expansion)
+    if args.expansion:
+        exp_folder = {"classic": "Classic", "tbc": "TBC", "wotlk": "WotLK", "cata": "Cata"}.get(
+            args.expansion.lower(), args.expansion
+        )
+        recipe_files = list((args.data_dir / exp_folder).glob("*/Recipes.lua"))
+    else:
+        recipe_files = list(args.data_dir.glob("**/Recipes.lua"))
 
     if args.profession:
         recipe_files = [f for f in recipe_files if args.profession.lower() in str(f).lower()]

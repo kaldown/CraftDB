@@ -1047,7 +1047,7 @@ local recipes = {
         name = "Goldthorn Tea",
         itemId = 10841,
         skillRequired = 175,
-        skillRange = { orange = 175, yellow = 215, green = 235, gray = 255 },
+        skillRange = { orange = 175, yellow = 175, green = 190, gray = 205 },
         reagents = {
             { itemId = 3821, name = "Goldthorn", count = 1 },
             { itemId = 159, name = "Refreshing Spring Water", count = 1 },
@@ -1190,7 +1190,7 @@ local recipes = {
         name = "Dragonbreath Chili",
         itemId = 12217,
         skillRequired = 200,
-        skillRange = { orange = 200, yellow = 240, green = 260, gray = 280 },
+        skillRange = { orange = 200, yellow = 225, green = 237, gray = 250 },
         reagents = {
             { itemId = 12037, name = "Mystery Meat", count = 1 },
             { itemId = 4402, name = "Small Flame Sac", count = 1 },
@@ -1209,7 +1209,7 @@ local recipes = {
         name = "Heavy Kodo Stew",
         itemId = 12215,
         skillRequired = 200,
-        skillRange = { orange = 200, yellow = 240, green = 260, gray = 280 },
+        skillRange = { orange = 200, yellow = 225, green = 237, gray = 250 },
         reagents = {
             { itemId = 12204, name = "Heavy Kodo Meat", count = 2 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1228,7 +1228,7 @@ local recipes = {
         name = "Spider Sausage",
         itemId = 17222,
         skillRequired = 200,
-        skillRange = { orange = 200, yellow = 240, green = 260, gray = 280 },
+        skillRange = { orange = 200, yellow = 225, green = 237, gray = 250 },
         reagents = {
             { itemId = 12205, name = "White Spider Meat", count = 2 },
         },
@@ -1244,7 +1244,7 @@ local recipes = {
         name = "Spiced Chili Crab",
         itemId = 12216,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 12206, name = "Tender Crab Meat", count = 1 },
             { itemId = 2692, name = "Hot Spices", count = 2 },
@@ -1262,7 +1262,7 @@ local recipes = {
         name = "Monster Omelet",
         itemId = 12218,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 12207, name = "Giant Egg", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 2 },
@@ -1280,7 +1280,7 @@ local recipes = {
         name = "Spotted Yellowtail",
         itemId = 6887,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 4603, name = "Raw Spotted Yellowtail", count = 1 },
         },
@@ -1297,7 +1297,7 @@ local recipes = {
         name = "Cooked Glossy Mightfish",
         itemId = 13927,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 13754, name = "Raw Glossy Mightfish", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1315,7 +1315,7 @@ local recipes = {
         name = "Filet of Redgill",
         itemId = 13930,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 13758, name = "Raw Redgill", count = 1 },
         },
@@ -1332,7 +1332,7 @@ local recipes = {
         name = "Undermine Clam Chowder",
         itemId = 16766,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 7974, name = "Zesty Clam Meat", count = 2 },
             { itemId = 2692, name = "Hot Spices", count = 1 },
@@ -1351,7 +1351,7 @@ local recipes = {
         name = "Tender Wolf Steak",
         itemId = 18045,
         skillRequired = 225,
-        skillRange = { orange = 225, yellow = 265, green = 285, gray = 305 },
+        skillRange = { orange = 225, yellow = 250, green = 262, gray = 275 },
         reagents = {
             { itemId = 12208, name = "Tender Wolf Meat", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1369,7 +1369,7 @@ local recipes = {
         name = "Grilled Squid",
         itemId = 13928,
         skillRequired = 240,
-        skillRange = { orange = 240, yellow = 280, green = 300, gray = 320 },
+        skillRange = { orange = 240, yellow = 265, green = 277, gray = 290 },
         reagents = {
             { itemId = 13755, name = "Winter Squid", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1387,7 +1387,7 @@ local recipes = {
         name = "Hot Smoked Bass",
         itemId = 13929,
         skillRequired = 240,
-        skillRange = { orange = 240, yellow = 280, green = 300, gray = 320 },
+        skillRange = { orange = 240, yellow = 265, green = 277, gray = 290 },
         reagents = {
             { itemId = 13756, name = "Raw Summer Bass", count = 1 },
             { itemId = 2692, name = "Hot Spices", count = 2 },
@@ -1405,7 +1405,7 @@ local recipes = {
         name = "Nightfin Soup",
         itemId = 13931,
         skillRequired = 250,
-        skillRange = { orange = 250, yellow = 290, green = 310, gray = 330 },
+        skillRange = { orange = 250, yellow = 275, green = 285, gray = 295 },
         reagents = {
             { itemId = 13759, name = "Raw Nightfin Snapper", count = 1 },
             { itemId = 159, name = "Refreshing Spring Water", count = 1 },
@@ -1423,7 +1423,7 @@ local recipes = {
         name = "Poached Sunscale Salmon",
         itemId = 13932,
         skillRequired = 250,
-        skillRange = { orange = 250, yellow = 290, green = 310, gray = 330 },
+        skillRange = { orange = 250, yellow = 275, green = 285, gray = 295 },
         reagents = {
             { itemId = 13760, name = "Raw Sunscale Salmon", count = 1 },
         },
@@ -1474,7 +1474,7 @@ local recipes = {
         name = "Lobster Stew",
         itemId = 13933,
         skillRequired = 275,
-        skillRange = { orange = 275, yellow = 315, green = 335, gray = 355 },
+        skillRange = { orange = 275, yellow = 300, green = 312, gray = 325 },
         reagents = {
             { itemId = 13888, name = "Darkclaw Lobster", count = 1 },
             { itemId = 159, name = "Refreshing Spring Water", count = 1 },
@@ -1492,7 +1492,7 @@ local recipes = {
         name = "Mightfish Steak",
         itemId = 13934,
         skillRequired = 275,
-        skillRange = { orange = 275, yellow = 315, green = 335, gray = 355 },
+        skillRange = { orange = 275, yellow = 300, green = 312, gray = 325 },
         reagents = {
             { itemId = 13893, name = "Large Raw Mightfish", count = 1 },
             { itemId = 2692, name = "Hot Spices", count = 1 },
@@ -1511,7 +1511,7 @@ local recipes = {
         name = "Baked Salmon",
         itemId = 13935,
         skillRequired = 275,
-        skillRange = { orange = 275, yellow = 315, green = 335, gray = 355 },
+        skillRange = { orange = 275, yellow = 300, green = 312, gray = 325 },
         reagents = {
             { itemId = 13889, name = "Raw Whitescale Salmon", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1529,7 +1529,7 @@ local recipes = {
         name = "Runn Tum Tuber Surprise",
         itemId = 18254,
         skillRequired = 275,
-        skillRange = { orange = 275, yellow = 315, green = 335, gray = 355 },
+        skillRange = { orange = 275, yellow = 300, green = 312, gray = 325 },
         reagents = {
             { itemId = 18255, name = "Runn Tum Tuber", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1546,7 +1546,7 @@ local recipes = {
         name = "Smoked Desert Dumplings",
         itemId = 20452,
         skillRequired = 285,
-        skillRange = { orange = 285, yellow = 325, green = 345, gray = 365 },
+        skillRange = { orange = 285, yellow = 310, green = 322, gray = 335 },
         reagents = {
             { itemId = 20424, name = "Sandworm Meat", count = 1 },
             { itemId = 3713, name = "Soothing Spices", count = 1 },
@@ -1563,7 +1563,7 @@ local recipes = {
         name = "Dirge's Kickin' Chimaerok Chops",
         itemId = 21023,
         skillRequired = 300,
-        skillRange = { orange = 300, yellow = 325, green = 345, gray = 365 },
+        skillRange = { orange = 300, yellow = 325, green = 337, gray = 350 },
         reagents = {
             { itemId = 2692, name = "Hot Spices", count = 1 },
             { itemId = 9061, name = "Goblin Rocket Fuel", count = 1 },
